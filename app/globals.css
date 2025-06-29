@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.parallax-testimonial {
+  background: linear-gradient(to bottom, #38bdf8 0%, #ffffff 50%, #38bdf8 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
