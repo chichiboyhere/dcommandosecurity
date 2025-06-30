@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronRight, ChevronLeft, X, Menu, ChevronUp } from "lucide-react";
+
+// Icon lookup object
+
+import ServicesSection from "@/components/ServicesSection";
 import CroppedImageGallery from "@/components/CroppedImageGallery";
 import AOSInitializer from "@/components/AOSInitializer";
 import bg1 from "@/public/bg1.jpg";
@@ -212,20 +216,14 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4 text-blue-900">
                 About Us
               </h3>
-              <p className="text-gray-800">
+              <p className="text-gray-800 text-xl">
                 We provide top-notch security systems and services that give you
                 peace of mind... Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Natus nesciunt similique cum distinctio!
                 Veritatis provident minima aperiam. Obcaecati reprehenderit ipsa
                 qui similique? Suscipit consectetur nobis non odio dicta nihil
                 adipisicing elit. Natus nesciunt similique cum distinctio!
-                Veritatis provident minima aperiam. Obcaecati reprehenderit ipsa
-                adipisicing elit. Natus nesciunt similique cum distinctio!
-                Veritatis provident minima aperiam. Obcaecati reprehenderit ipsa
-                qui similique? Suscipit consectetur nobis non odio dicta nihil
-                adipisicing elit. Natus nesciunt similique cum distinctio!
-                Veritatis provident minima aperiam. Obcaecati reprehenderit ipsa
-                qui similique? Suscipit consectetur nobis non odio dicta nihil
+                Veritatis provident minima aperiam.
               </p>
             </div>
           </div>
@@ -278,6 +276,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Services */}
+
+        <ServicesSection />
 
         {/* Testimonials */}
         <AOSInitializer />

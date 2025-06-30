@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+//import localFont from "next/font/local";
 
+// const myFont = localFont({
+//   src: "./public/fonts/HalogenBaba.otf",
+//   variable: "--font-my-font", // CSS variable name
+// });
+
+// I'm changing the default font from Geist to myFont
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
