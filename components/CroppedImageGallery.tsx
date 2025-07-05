@@ -31,7 +31,17 @@ import Image from "next/image";
 //     </div>
 //   );
 // };
-
+/**
+ * 
+ * <img
+    key={idx}
+    src={src}
+    alt={`Banner ${idx}`}
+    className="rounded-lg object-cover w-full h-[200px] md:h-[250px] max-w-[90%] md:max-w-[30%] transition duration-300"
+  />
+ * 
+ * 
+ */
 interface CroppedImageGalleryProps {
   images: string[];
   aspectRatio?: string; // e.g. 'aspect-[3/2]', 'aspect-square'
