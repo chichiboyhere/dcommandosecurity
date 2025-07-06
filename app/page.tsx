@@ -1,11 +1,13 @@
 import Image from "next/image";
 
-import HeroSection from "@/components/IndexPageSections/HeroSection";
+import HeroSection from "@/components/indexPageSections/HeroSection";
 import BannerSlider from "@/components/BannerSlider";
-import ServicesSection from "@/components/IndexPageSections/ServicesSection";
-import AboutSection from "@/components/IndexPageSections/AboutSection";
+import ServicesSection from "@/components/indexPageSections/ServicesSection";
+import AboutSection from "@/components/indexPageSections/AboutSection";
 import AOSInitializer from "@/components/AOSInitializer";
-import Testimonial from "@/components/IndexPageSections/Testimonial";
+import Testimonial from "@/components/indexPageSections/Testimonial";
+import ClientMarquee from "@/components/indexPageSections/ClientMarquee";
+import GallerySlideSection from "@/components/indexPageSections/GallerySection";
 import blog1 from "@/public/images/blogs/blog1.jpg";
 import blog2 from "@/public/images/blogs/blog2.jpg";
 import blog3 from "@/public/images/blogs/blog3.jpg";
@@ -46,9 +48,14 @@ export default function Home() {
         <AboutSection />
 
         <ServicesSection />
-        <BannerSlider />
+        <GallerySlideSection />
         <Testimonial />
-
+        <section className="my-16">
+          <h2 className="text-3xl font-semibold text-center mb-6">
+            Our Clients
+          </h2>
+          <ClientMarquee />
+        </section>
         {/* Blogs */}
         <AOSInitializer />
         <section className="p-8 bg-gray-100 text-blue-900" data-aos="fade-up">
@@ -75,17 +82,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-        {/* Gallery section to be cut out soon and placed in the special page for gallery*/}
-        {/* <section className="p-8 bg-gray-100 text-blue-900">
-          <h1 className="text-2xl font-bold mb-4 text-center">
-            Client Image Gallery
-          </h1>
-          <CroppedImageGallery
-            images={imageUrls}
-            aspectRatio="aspect-[4/3]"
-            widthClass="w-full sm:w-100 md:w-75"
-          />
-        </section> */}
       </main>
     </div>
   );
