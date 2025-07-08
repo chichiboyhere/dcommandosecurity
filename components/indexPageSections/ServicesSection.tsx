@@ -57,10 +57,12 @@ export default function ServicesSection() {
                   </h3>
                 </div>
                 {/* Display the first 100 characters of the description */}
-                <p className="text-gray-800 pl-14">
+                <p className="text-gray-800 pl-14 ">
                   <Link href="/services">
-                    {" "}
-                    {desc.slice(0, 200) + "...more"}
+                    {desc.slice(0, 200)}
+                    <span className=" cursor-pointer underline underline-offset-3 decoration-blue-600 text-blue-600 italic">
+                      ...more
+                    </span>
                   </Link>
                 </p>
               </div>

@@ -71,6 +71,21 @@ body {
   }
 }
 
+.clip-blob {
+  clip-path: path(
+    "M70,10 C90,20 100,50 90,70 C80,90 40,90 20,70 C0,50 10,10 30,10 Z"
+  );
+}
+
+/* Fade-in modal effect */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -11,7 +11,7 @@ import {
   CircleUserRound,
   DoorOpen,
 } from "lucide-react";
-
+import Link from "next/link";
 const iconMap = {
   cyber: Laptop,
   bodyguard: ShieldCheck,
@@ -23,23 +23,25 @@ const iconMap = {
   vendorSourcing: Handshake,
 };
 import Image from "next/image";
-
+// import { X } from "lucide-react";
 import { Modal } from "@/components/ui/ModalWithRef";
 
 import { services } from "@/data/servicesData";
 
+import CarRentalFields from "../CarRentalFields";
 const Services = () => {
   const [selectedService, setSelectedService] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedServiceId, setSelectedServiceId] = useState("");
 
   const modalRef = useRef<HTMLDivElement>(null);
-  const openForm = (serviceName: string) => {
+  const openForm = (id: string, serviceName: string) => {
     setSelectedService(serviceName);
     setIsModalOpen(true);
+    setSelectedServiceId(id);
+    console.log(id);
     // Scroll to the modal
-    if (modalRef.current) {
-      modalRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    modalRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const closeForm = () => {
@@ -91,8 +93,37 @@ const Services = () => {
                   </div>
 
                   <p className="text-gray-800 py-5">{desc}</p>
+                  {id === "vendorSourcing" ? (
+                    <>
+                      <p>
+                        From{" "}
+                        <span className="font-semibold italic">Caterers</span>,
+                        to <span className="font-semibold italic">Djs</span>,{" "}
+                        <span className="font-semibold italic">
+                          Event Hall Decorators
+                        </span>
+                        , <span className="font-semibold italic">Mcs</span>, to{" "}
+                        <span className="font-semibold italic">
+                          Photographers
+                        </span>{" "}
+                        and{" "}
+                        <span className="font-semibold italic">
+                          Videographers
+                        </span>
+                        ,...we have you covered.
+                      </p>
+                      <p className="underline underline-offset-3 decoration-blue-600 text-blue-600 italic">
+                        <Link href="/gallery#galleryOutSourced">
+                          Check out what one of our vendors did on Mr
+                          Phenomenal&apos;s wedding
+                        </Link>
+                      </p>
+                    </>
+                  ) : (
+                    ""
+                  )}
                   <button
-                    onClick={() => openForm(title)} // Sets selected service and opens modal
+                    onClick={() => openForm(id, title)} // Sets selected service and opens modal
                     className="items-center justify-center mt-2 text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800 transition"
                   >
                     Book Now
@@ -110,11 +141,11 @@ const Services = () => {
         <Modal onClose={closeForm} ref={modalRef}>
           <div className="max-w-lg max-h-[90vh] p-6 rounded-xl shadow-lg  overflow-y-auto ">
             {/* <button
-                onClick={closeForm}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
-              >
-                <X size={24} />
-              </button> */}
+              onClick={closeForm}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
+            >
+              <X size={24} />
+            </button> */}
             <h2 className="text-xl font-bold mb-4 text-blue-900">
               Book {selectedService}
             </h2>
@@ -158,32 +189,37 @@ const Services = () => {
                   className="w-full border px-3 py-2 rounded"
                 />
               </div>
+              {selectedServiceId === "carRentalAndAirportPickUp" ? (
+                <CarRentalFields />
+              ) : (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      Number of Personnel
+                    </label>
+                    <input
+                      name="quantity"
+                      type="number"
+                      min="1"
+                      required
+                      className="w-full border px-3 py-2 rounded"
+                    />
+                  </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Number of Personnel
-                </label>
-                <input
-                  name="quantity"
-                  type="number"
-                  min="1"
-                  required
-                  className="w-full border px-3 py-2 rounded"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Date Needed
-                </label>
-                <input
-                  name="date"
-                  type="date"
-                  required
-                  className="w-full border px-3 py-2 rounded"
-                  min={new Date().toISOString().split("T")[0]}
-                />
-              </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      Date Needed
+                    </label>
+                    <input
+                      name="date"
+                      type="date"
+                      required
+                      className="w-full border px-3 py-2 rounded"
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
+                </>
+              )}
 
               <div>
                 <label className="block text-sm font-medium text-gray-700">

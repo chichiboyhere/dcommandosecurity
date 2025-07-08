@@ -1,107 +1,96 @@
-import CroppedImageGallery from "../CroppedImageGallery";
+"use client";
 
-const galleryInfo = [
-  {
-    image: "/images/gallery/gallery1.jpg",
-    desc: "Dcommandos Security at Yard158, Oregun Ikeja, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery2.jpg",
-    desc: "On a crowd control mission: Dcommandos Security at the NLP Conference, Lagos, organized by Harvesters International Christian Centre(HICC)."
-  },
-  {
-    image: "/images/gallery/gallery3.jpg",
-    desc: "Dcommandos Security at 10 Degrees Ikeja, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery4.jpg",
-    desc: "There we were, at Villa D Groove, Lekki Phase One, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery5.jpg",
-    desc: "We were at Villa Park Hotel, mounting guard at the multi-purpose hall, Alakoson, Avenue, Amuwo Odofin, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery6.jpg",
-    desc: "Dcommandos Security at the Civic centre, Lekki, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery7.jpg",
-    desc: "We were on ground at Grace Garden Centre, Lekki, Phase One, Lagos."
-  },
-  {
-    image: "/images/gallery/gallery8.jpg",
-    desc: "Dcommando Security at Havillah Event Centre."
-  },
-  {
-    image: "/images/gallery/gallery9.jpg",
-    desc: "We were around at a birthday party, organized in Ogun state."
-  },
-  {
-    image: "/images/gallery/gallery10.jpg",
-    desc: "Dcommandos Security with the CSO of a billionaire in Banana Island, Ikoyi Lagos at a wedding reception" 
-  },
-  {
-    image: "/images/gallery/gallery10.jpg",
-    desc: "Dcommandos Security with the CSO of a billionaire in Banana Island, Ikoyi Lagos at a wedding reception" 
-  },
-  {
-    image: "/images/gallery/gallery10.jpg",
-    desc: "Dcommandos Security with the CSO of a billionaire in Banana Island, Ikoyi Lagos at a wedding reception" 
-  },
-  {
-    image: "/images/gallery/gallery10.jpg",
-    desc: "Dcommandos Security with the CSO of a billionaire in Banana Island, Ikoyi Lagos at a wedding reception" 
-  },
-  {
-    image: "/images/gallery/gallery10.jpg",
-    desc: "Dcommandos Security with the CSO of a billionaire in Banana Island, Ikoyi Lagos at a wedding reception" 
-  },
-  {
-    image: "/images/gallery/gallery11.jpg",
-    desc: "We stood gallantly alert at Naira Marley's Concert at Balmoral Hall, Ikeja Lagos." 
-  },
-  {
-    image: "/images/gallery/gallery12.jpg",
-    desc: "We stood gallantly alert at Naira Marley's Concert at Balmoral Hall, Ikeja Lagos." 
-  },
-  {
-    image: "/images/gallery/gallery13.jpg",
-    desc: "We were on ground mounting guard vigilantly at the U-19 Men's World Cup at Unilag." 
-  },
-  {
-    image: "/images/gallery/gallery14.jpg",
-    desc: "When duty called at Brava Event Centre, we responded quickly to ensure the safely of the guests on ground for a Celebration of Life." 
-  },
-  {
-    image: "/images/gallery/gallery15.jpg",
-    desc: "Crowd Control Experts. Yes, that's who we are. We were on ground at NLP Conference, Lagos,orgainized by Harvesters International Christian Centre(HICC)." 
-  },
-  {
-    image: "/images/gallery/gallery16.jpg",
-    desc: "When duty called ay Harvesters International Christian Centre(HICC), we responded quickly to ensure every one and every thing was under control." 
-  },
-  
-];
+import Image from "next/image";
+import { Phone, CalendarClock, X } from "lucide-react";
+import { useState } from "react";
+import { galleryInfo } from "@/data/galleryDefaultData";
+import Link from "next/link";
 
-const galleryImgs =[
-    
-]
 const GalleryDefault = () => {
- 
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
-    return(
-{/* Gallery section to be cut out soon and placed in the special page for gallery*/}
-         <section className="p-8 bg-gray-100 text-blue-900">
-          <h1 className="text-2xl font-bold mb-4 text-center">
-            Client Image Gallery
-          </h1>
-          <CroppedImageGallery
-            images={galleryInfo.image}
-            aspectRatio="aspect-[4/3]"
-            widthClass="w-full sm:w-100 md:w-75"
-          />
-        </section> 
-    )
-}
-export default GalleryDefault
+  return (
+    <section className="text-blue-900 my-12" id="galleryDefault">
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Client Image Gallery
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {galleryInfo.map((galleryPic, index) => (
+          <div
+            key={index}
+            className="transition-transform duration-300 hover:scale-105"
+          >
+            {/* IMAGE CONTAINER */}
+            <div className="relative group aspect-[4/3] w-full bg-white rounded-xl overflow-hidden shadow border border-blue-100 cursor-pointer">
+              {/* IMAGE */}
+
+              <Image
+                src={galleryPic.image}
+                alt="GalleryPic"
+                fill
+                onClick={() => setLightboxImg(galleryPic.image)}
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
+              />
+
+              {/* HOVER ACTIONS */}
+              <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex gap-8">
+                  <Link
+                    href="/services"
+                    className="flex flex-col items-center group/icon"
+                  >
+                    <CalendarClock
+                      size={30}
+                      className="text-white group-hover/icon:animate-bounce"
+                    />
+                    <span className="text-xs text-white mt-1">Book Now</span>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex flex-col items-center group/icon"
+                  >
+                    <Phone
+                      size={30}
+                      className="text-white group-hover/icon:animate-bounce"
+                    />
+                    <span className="text-xs text-white mt-1">Contact us</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* DESCRIPTION */}
+            <p className="text-gray-700 italic text-sm my-4">
+              {galleryPic.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* LIGHTBOX MODAL */}
+      {lightboxImg && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
+          <div className="relative w-full max-w-4xl aspect-video">
+            <Image
+              src={lightboxImg}
+              alt="Enlarged"
+              fill
+              className="object-contain"
+            />
+            <button
+              onClick={() => setLightboxImg(null)}
+              className="absolute top-4 right-4 bg-white p-2 rounded-full shadow hover:bg-red-100"
+            >
+              <X size={20} />
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
+
+export default GalleryDefault;

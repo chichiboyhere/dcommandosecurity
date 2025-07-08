@@ -11,7 +11,7 @@ const images = [
   "/images/gallery/gallery5.jpg",
   "/images/gallery/gallery6.jpg",
 ];
-
+import Link from "next/link";
 const GallerySlideSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(1);
@@ -46,51 +46,52 @@ const GallerySlideSection = () => {
         Explore our gallery of gallent men at work
       </h1>
       {/* Slider wrapper */}
-      <div className="relative flex gap-4 overflow-hidden w-full justify-center content-center ">
-        {/* Slide track */}
+      <Link href="/gallery">
+        <div className="relative flex gap-4 overflow-hidden w-full justify-center content-center ">
+          {/* Slide track */}
 
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{
-            width: `${(images.length * 100) / itemsPerSlide}%`,
-            transform: `translateX(${translateX}%)`,
-          }}
-        >
-          {images.map((src, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0"
-              style={{ width: `${slideWidth}%` }}
-            >
-              <Image
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              width: `${(images.length * 100) / itemsPerSlide}%`,
+              transform: `translateX(${translateX}%)`,
+            }}
+          >
+            {images.map((src, idx) => (
+              <div
                 key={idx}
-                width={500}
-                height={375}
-                src={src}
-                alt={`Banner ${idx}`}
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="rounded-lg object-cover w-full h-[200px] md:h-[250px] max-w-[90%] content-center "
-              />
-            </div>
-          ))}
+                className="flex-shrink-0"
+                style={{ width: `${slideWidth}%` }}
+              >
+                <Image
+                  key={idx}
+                  width={500}
+                  height={375}
+                  src={src}
+                  alt={`Banner ${idx}`}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="rounded-lg object-cover w-full h-[200px] md:h-[250px] max-w-[90%] content-center "
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Chevrons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200 "
+          >
+            <ChevronLeft className="w-5 h-5 " />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200"
+          >
+            <ChevronRight className="w-5 h-5 " />
+          </button>
         </div>
-
-        {/* Chevrons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200 "
-        >
-          <ChevronLeft className="w-5 h-5 " />
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200"
-        >
-          <ChevronRight className="w-5 h-5 " />
-        </button>
-      </div>
-
+      </Link>
       {/* Indicators */}
       <div className="flex justify-center mt-4 gap-2">
         {Array.from({ length: totalSlides }).map((_, idx) => (

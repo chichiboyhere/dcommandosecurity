@@ -40,6 +40,14 @@ export const services = [
     bg: "bg-blue-900",
   },
   {
+    id: "carRentalAndAirportPickUp",
+    title: "Car Rental & Airport Pick-Up",
+    icon: "escort",
+    image: "/images/services/carRental.jpg",
+    desc: "Are you looking for a reliable, luxurious car for hire? Or looking for a car for airport pick-up? Do you want to to be chauffeured around in comfort and style, while ensuring your safety? We offer car hire services and airport pick with escort vans. Whether you need a luxury car for a wedding reception, a corporate event, or a private drive, or you want to be chauffeured from the airport to anywhere in the country, look no further than our car rental and airport pick-up services.",
+    bg: "bg-yellow-600",
+  },
+  {
     id: "securityGuard",
     title: "Security Guard Services",
     icon: "securityGuard",
@@ -52,7 +60,7 @@ export const services = [
     title: "Vendor Sourcing",
     icon: "vendorSourcing",
     image: "/images/services/vendorSourcing.jpg",
-    desc: "Are you an event planner looking to harness the services of vendors for the smooth-running of your fast-approaching event? Or are you just looking to organize that birthday party, wedding, or other special event and don't know how to reach out to all professionals that you need? Look no further than our vendor sourcing services. Our team of experts will handle the task of finding the right vendors for your event and make sure everything goes smoothly. From caterers, to Dj, event hall decorators, ushers, to security guards, we have you covered.",
+    desc: `Are you an event planner looking to harness the services of vendors for the smooth-running of your fast-approaching event? Or are you just looking to organize that birthday party, wedding, or other special event and don't know how to reach out to all professional vendors that you need? Look no further than our vendor sourcing services. We will handle the task of finding the right trust-worthy vendors for your event and make sure everything goes smoothly.`,
     bg: "bg-blue-900",
   },
   {
