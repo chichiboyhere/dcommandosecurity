@@ -33,15 +33,6 @@ const HistoryAndAchievements = () => {
         </div>
       </div>
       <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
-        <div className="bg-white rounded-xl p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-120">
-          <Image
-            src={"/images/t2.jpg"}
-            alt="About us"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
         <div className="text-black">
           <h2 className="text-5xl font-bold text-blue-900 my-6">
             We collaborate with big brands to bring about innovative security
@@ -52,6 +43,16 @@ const HistoryAndAchievements = () => {
             of thousands of personnel nationwide. We’ve served sectors including
             oil & gas, finance, and estates.
           </p>
+        </div>
+
+        <div className="bg-white rounded-xl p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-120">
+          <Image
+            src={"/images/t2.jpg"}
+            alt="About us"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
       </div>
     </section>

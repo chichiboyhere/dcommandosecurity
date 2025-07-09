@@ -1,13 +1,16 @@
 const carBrands = [
   { brand: "Toyota Corolla", price: "₦10,000/hr" },
   { brand: "Honda Civic", price: "₦12,000/hr" },
-  { brand: "Mercedes Benz", price: "₦25,000/hr" },
+
   { brand: "Lexus RX", price: "₦22,000/hr" },
+  { brand: "Mercedes Benz", price: "₦25,000/hr" },
   { brand: "Tesla Model S", price: "₦30,000/hr" },
-  { brand: "Lamborghini Huracan", price: "₦50,000/hr" },
-  { brand: "Bugatti Chiron", price: "₦100,000/hr" },
+  { brand: "Lamborghini Huracan", price: "₦60,000/hr" },
   { brand: "Porsche 911", price: "₦70,000/hr" },
   { brand: "Ferrari 488", price: "₦80,000/hr" },
+  { brand: "Rollsroyce Phantom", price: "₦100,000/hr" },
+  { brand: "Bugatti Chiron", price: "₦200,000/hr" },
+
   { brand: "Others - specify below" },
 ];
 

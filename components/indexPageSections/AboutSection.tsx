@@ -41,7 +41,7 @@ const AboutSection = () => {
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <div className="bg-white rounded-xl p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-160">
+        <div className="bg-white rounded-xl md: p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-160">
           <Image
             src={about2}
             alt="Our Expertise"
