@@ -60,7 +60,7 @@ export default function ServicesSection() {
                 <p className="text-gray-800 pl-14 ">
                   <Link href="/services">
                     {desc.slice(0, 200)}
-                    <span className=" cursor-pointer underline underline-offset-3 decoration-blue-600 text-blue-600 italic">
+                    <span className=" cursor-pointer  text-blue-600 italic">
                       ...more
                     </span>
                   </Link>

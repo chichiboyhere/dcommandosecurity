@@ -21,12 +21,12 @@ export default function LoginPage() {
     if (res?.ok) {
       router.push("/admin/blog/new");
     } else {
-      setError("Invalid email or password");
+      setError("Invalid email or password!");
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-12 p-6 border rounded shadow">
+    <div className="max-w-md mx-auto my-20 p-6 border rounded-2xl shadow">
       <h1 className="text-2xl font-bold mb-4 text-center">Admin Login</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">

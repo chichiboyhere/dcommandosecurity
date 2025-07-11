@@ -12,6 +12,46 @@ function NewBlogPostForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError("");
+
+  //   const formData = new FormData();
+  //   formData.append("title", title);
+  //   formData.append("content", content);
+  //   if (image1) formData.append("image1", image1);
+  //   if (image2) formData.append("image2", image2);
+
+  //   try {
+  //     console.log("Form data:", formData);
+  //     const res = await fetch("/api/blog", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+
+  //     if (!res.ok) {
+  //       let errorMessage = "Something went wrong";
+  //       try {
+  //         const data = await res.json();
+  //         if (data?.message) {
+  //           errorMessage = data.message;
+  //         }
+  //       } catch (err) {
+  //         // JSON parse failed, fallback to default message
+  //       }
+  //       throw new Error(errorMessage);
+  //     }
+
+  //     router.push("/blog");
+  //   } catch (err) {
+  //     setError(err.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // In NewBlogPostForm component
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -20,8 +60,8 @@ function NewBlogPostForm() {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    if (image1) formData.append("image1", image1);
-    if (image2) formData.append("image2", image2);
+    if (image1) formData.append("images", image1); // Change to 'images'
+    if (image2) formData.append("images", image2); // Change to 'images'
 
     try {
       const res = await fetch("/api/blog", {
@@ -30,8 +70,14 @@ function NewBlogPostForm() {
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.message || "Something went wrong");
+        let errorMessage = "Something went wrong";
+        try {
+          const data = await res.json();
+          if (data?.message) {
+            errorMessage = data.message;
+          }
+        } catch (err) {}
+        throw new Error(errorMessage);
       }
 
       router.push("/blog");
@@ -75,6 +121,7 @@ function NewBlogPostForm() {
             accept="image/*"
             onChange={(e) => setImage1(e.target.files[0])}
           />
+          {/* <input type="file" name="image" accept="image/*" onChange={handleImageChange} /> */}
         </div>
 
         <div>
