@@ -185,8 +185,9 @@ import { connectDB } from "@/lib/mongodb";
 import BlogPost from "@/models/BlogPost";
 import mongoose from "mongoose";
 import CommentForm from "@/components/CommentForm"; // Assuming you moved it into components
-
+import ReactMarkdown from "react-markdown";
 export const dynamic = "force-dynamic";
+import Image from "next/image";
 
 export default async function BlogDetailPage({ params }: { params: any }) {
   const id = params?.id;
@@ -204,22 +205,25 @@ export default async function BlogDetailPage({ params }: { params: any }) {
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-4 space-y-6">
-      <h1 className="text-3xl font-bold">{post.title}</h1>
-      <p className="text-gray-700 whitespace-pre-line">{post.content}</p>
+      <h1 className="text-3xl font-bold mt-6 text-blue-900">{post.title}</h1>
 
       {post.images && post.images.length > 0 && (
         <div className="mt-6 grid grid-cols-1 gap-4">
           {post.images.map((id: mongoose.Types.ObjectId) => (
-            <img
+            <Image
               key={id.toString()}
               src={`/api/images/${id}`}
               alt="Blog Image"
               className="w-full h-auto rounded shadow"
+              width={500}
+              height={300}
             />
           ))}
         </div>
       )}
 
+      <ReactMarkdown>{post.content}</ReactMarkdown>
+      {/* <p className="text-gray-700 whitespace-pre-line"> */}
       {/* Comments */}
       <div className="mt-10">
         <h2 className="text-xl font-semibold mb-4">Comments</h2>

@@ -15,7 +15,7 @@ export default async function BlogPage() {
   const blogs = await fetchBlogs();
 
   return (
-    <div className="mx-auto p-6 bg-gray-100 my-10">
+    <div className="mx-auto p-6 bg-gray-100">
       <h1 className="text-3xl font-bold my-10 text-center text-blue-900">
         Damion Security Blog
       </h1>
@@ -25,49 +25,9 @@ export default async function BlogPage() {
           <p className="text-center text-gray-500">No blog posts yet.</p>
         </div>
       ) : (
-        // <div className="grid gap-6 md:grid-cols-2">
-        //   {blogs.map((post) => (
-        //     <Link
-        //       key={post._id}
-        //       href={`/blog/${post._id}`}
-        //       // className="block p-4 rounded-lg shadow hover:shadow-md transition"
-        //     >
-        //       <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-        //       {/* {post.images?.[0] && (
-        //         <Image
-        //           src={post.images[0]}
-        //           alt={post.title}
-        //           className="w-full h-48 object-cover rounded mb-2"
-        //           width={500}
-        //           height={300}
-        //         /><Link key={blog._id} href={`/blog/${blog._id}`}>
-        //       )} */}
-
-        //       {post.images?.map((id) => (
-        //         <div
-        //           key={id}
-        //           className="bg-white p-4 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-120 shadow-md"
-        //           data-aos="fade-up"
-        //           data-aos-delay="300"
-        //         >
-        //           <Image
-        //             src={`/api/images/${id}`}
-        //             alt="Blog Image"
-        //             className="w-full h-auto mb-4 rounded-xl  "
-        //             width={500}
-        //             height={300}
-        //           />
-        //         </div>
-        //       ))}
-        //       <p className="text-gray-700 line-clamp-3">
-        //         <ReactMarkdown>{post.content}</ReactMarkdown>
-        //       </p>
-        //     </Link>
-        //   ))}
-        // </div>
         <section className="p-8  text-blue-900" data-aos="fade-up">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogs.map((post) => (
+            {blogs.slice(0, 3).map((post) => (
               <Link key={post._id} href={`/blog/${post._id}`}>
                 <div className="transition-transform duration-300 hover:scale-110">
                   <div className="bg-white rounded-xl p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-120 md:w-90">
@@ -83,9 +43,9 @@ export default async function BlogPage() {
                     ))}
                   </div>
                   <h4 className="text-lg font-bold my-4">{post.title}</h4>
-                  <div className="text-gray-700 line-clamp-3">
+                  <p className="text-gray-700 line-clamp-3">
                     <ReactMarkdown>{post.content}</ReactMarkdown>
-                  </div>
+                  </p>
                 </div>
               </Link>
             ))}
