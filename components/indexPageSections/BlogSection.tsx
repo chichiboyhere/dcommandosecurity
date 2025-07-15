@@ -43,9 +43,9 @@ export default async function BlogPage() {
                     ))}
                   </div>
                   <h4 className="text-lg font-bold my-4">{post.title}</h4>
-                  <p className="text-gray-700 line-clamp-3">
+                  <div className="text-gray-700 line-clamp-3">
                     <ReactMarkdown>{post.content}</ReactMarkdown>
-                  </p>
+                  </div>
                 </div>
               </Link>
             ))}

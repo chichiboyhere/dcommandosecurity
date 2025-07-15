@@ -188,6 +188,7 @@ import CommentForm from "@/components/CommentForm"; // Assuming you moved it int
 import ReactMarkdown from "react-markdown";
 export const dynamic = "force-dynamic";
 import Image from "next/image";
+import RelatedPosts from "@/components/RelatedPosts";
 
 export default async function BlogDetailPage({ params }: { params: any }) {
   const id = params?.id;
@@ -204,44 +205,47 @@ export default async function BlogDetailPage({ params }: { params: any }) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto py-10 px-4 space-y-6">
-      <h1 className="text-3xl font-bold mt-6 text-blue-900">{post.title}</h1>
+    <>
+      <div className="max-w-3xl mx-auto py-10 px-4 space-y-6">
+        <h1 className="text-3xl font-bold mt-6 text-blue-900">{post.title}</h1>
 
-      {post.images && post.images.length > 0 && (
-        <div className="mt-6 grid grid-cols-1 gap-4">
-          {post.images.map((id: mongoose.Types.ObjectId) => (
-            <Image
-              key={id.toString()}
-              src={`/api/images/${id}`}
-              alt="Blog Image"
-              className="w-full h-auto rounded shadow"
-              width={500}
-              height={300}
-            />
-          ))}
-        </div>
-      )}
-
-      <ReactMarkdown>{post.content}</ReactMarkdown>
-      {/* <p className="text-gray-700 whitespace-pre-line"> */}
-      {/* Comments */}
-      <div className="mt-10">
-        <h2 className="text-xl font-semibold mb-4">Comments</h2>
-        {post.comments?.length > 0 ? (
-          [...post.comments].reverse().map((comment: any, index: number) => (
-            <div key={index} className="mb-4 p-4 border rounded">
-              <p className="text-sm text-gray-600">
-                {comment.name} — {new Date(comment.postedAt).toLocaleString()}
-              </p>
-              <p className="mt-1">{comment.comment}</p>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-500">No comments yet.</p>
+        {post.images && post.images.length > 0 && (
+          <div className="mt-6 grid grid-cols-1 gap-4">
+            {post.images.map((id: mongoose.Types.ObjectId) => (
+              <Image
+                key={id.toString()}
+                src={`/api/images/${id}`}
+                alt="Blog Image"
+                className="w-full h-auto rounded shadow"
+                width={500}
+                height={300}
+              />
+            ))}
+          </div>
         )}
-      </div>
 
-      <CommentForm postId={id} />
-    </div>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+        {/* <p className="text-gray-700 whitespace-pre-line"> */}
+        {/* Comments */}
+        <div className="mt-10">
+          <h2 className="text-xl font-semibold mb-4">Comments</h2>
+          {post.comments?.length > 0 ? (
+            [...post.comments].reverse().map((comment: any, index: number) => (
+              <div key={index} className="mb-4 p-4 border rounded">
+                <p className="text-sm text-gray-600">
+                  {comment.name} — {new Date(comment.postedAt).toLocaleString()}
+                </p>
+                <p className="mt-1">{comment.comment}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-gray-500">No comments yet.</p>
+          )}
+        </div>
+
+        <CommentForm postId={id} />
+      </div>
+      <RelatedPosts postId={id} />
+    </>
   );
 }
