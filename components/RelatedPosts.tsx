@@ -15,8 +15,8 @@ export default async function RelatedPosts({ postId }: { postId: string }) {
   const blogs = await fetchBlogs();
 
   return (
-    <div className="mx-auto p-6 bg-gray-100">
-      <h1 className="text-3xl font-bold my-10 text-center text-blue-900">
+    <div className="mx-auto p-6 bg-gray-100 dark:bg-gray-800">
+      <h1 className="text-3xl font-bold my-10 text-center text-blue-900 dark:text-white">
         Related Posts
       </h1>
 
@@ -42,8 +42,10 @@ export default async function RelatedPosts({ postId }: { postId: string }) {
                         />
                       ))}
                     </div>
-                    <h4 className="text-lg font-bold my-4">{post.title}</h4>
-                    <div className="text-gray-700 line-clamp-3">
+                    <h4 className="text-lg font-bold my-4 dark:text-white">
+                      {post.title}
+                    </h4>
+                    <div className="text-gray-700 line-clamp-3 dark:text-[#ffffffcf]">
                       <ReactMarkdown>{post.content}</ReactMarkdown>
                     </div>
                   </div>

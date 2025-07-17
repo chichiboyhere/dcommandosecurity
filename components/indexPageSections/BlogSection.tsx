@@ -15,17 +15,22 @@ export default async function BlogPage() {
   const blogs = await fetchBlogs();
 
   return (
-    <div className="mx-auto p-6 bg-gray-100">
-      <h1 className="text-3xl font-bold my-10 text-center text-blue-900">
+    <div className="mx-auto p-6 ">
+      <h1 className="text-3xl font-bold my-10 text-center text-blue-900 dark:text-white">
         Damion Security Blog
       </h1>
 
       {blogs.length === 0 ? (
         <div className="flex-1 justify-center items-center min-h-[80vw] ">
-          <p className="text-center text-gray-500">No blog posts yet.</p>
+          <p className="text-center text-gray-500 dark:text-[#ffffffcf]">
+            No blog posts yet.
+          </p>
         </div>
       ) : (
-        <section className="p-8  text-blue-900" data-aos="fade-up">
+        <section
+          className="p-8  text-blue-900 dark:text-white"
+          data-aos="fade-up"
+        >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blogs.slice(0, 3).map((post) => (
               <Link key={post._id} href={`/blog/${post._id}`}>
@@ -42,8 +47,10 @@ export default async function BlogPage() {
                       />
                     ))}
                   </div>
-                  <h4 className="text-lg font-bold my-4">{post.title}</h4>
-                  <div className="text-gray-700 line-clamp-3">
+                  <h4 className="text-lg font-bold my-4 dark:text-white">
+                    {post.title}
+                  </h4>
+                  <div className="text-gray-700 line-clamp-3 dark:text-[#ffffffcf]">
                     <ReactMarkdown>{post.content}</ReactMarkdown>
                   </div>
                 </div>

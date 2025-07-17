@@ -77,38 +77,38 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-6 py-10">
+    <div className="container mx-auto px-6 py-10  dark:bg-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column */}
         <div className="space-y-10 px-8">
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-blue-900">
+            <h2 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
               Contact Us
             </h2>
             <div className="space-y-7 text-gray-600">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 dark:text-white">
                 <MapPin className="w-5 h-5 " />
                 <span className="font-500">123 Allen Avenue, Ikeja, Lagos</span>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 dark:text-white">
                 <Mail className="w-5 h-5" />
                 <span className="font-500">info@damionsecurity.com</span>
               </div>
-              <div className="flex items-center gap-4 ">
-                <Phone className="w-5 h-5 text-gray-500" />
+              <div className="flex items-center gap-4 dark:text-white">
+                <Phone className="w-5 h-5 " />
                 <span className="font-500">+234 703 822 3500</span>
               </div>
               <div className="flex gap-4 items-center">
-                <FaFacebookF className="w-8 h-8 bg-black text-white px-2 rounded-full" />
-                <FaInstagram className="w-8 h-8 bg-black text-white px-2 rounded-xl" />
-                <FaXTwitter className="w-8 h-8 bg-black text-white px-2 rounded-xl" />
-                <FaWhatsapp className="w-8 h-8 bg-black text-white px-2 rounded-xl" />
+                <FaFacebookF className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-full" />
+                <FaInstagram className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
+                <FaXTwitter className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
+                <FaWhatsapp className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
               </div>
             </div>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-4 text-blue-900">
+            <h2 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
               Office Location
             </h2>
             <div className="relative h-80">
@@ -138,7 +138,7 @@ export default function ContactPage() {
 
         {/* Right Column */}
         <div className="px-8">
-          <h2 className="text-2xl font-bold mb-6 text-blue-900">
+          <h2 className="text-2xl font-bold mb-6 text-blue-900 dark:text-white">
             Send us a message
           </h2>
           <form
@@ -172,14 +172,14 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="name"
-                className="block mb-2 text-sm  text-gray-500 font-semibold"
+                className="block mb-2 text-sm  text-gray-500 font-semibold dark:text-white"
               >
                 Name
               </label>
               <input
                 name="name"
                 type="text"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400"
+                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -188,14 +188,14 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-sm  text-gray-500 font-semibold"
+                className="block mb-2 text-sm  text-gray-500 font-semibold dark:text-white"
               >
                 Email
               </label>
               <input
                 name="email"
                 type="email"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400"
+                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -203,14 +203,14 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="phone"
-                className="block mb-2 text-sm  text-gray-500 font-semibold"
+                className="block mb-2 text-sm  text-gray-500 font-semibold dark:text-white"
               >
                 Phone Number
               </label>
               <input
                 name="phone"
                 type="text"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400"
+                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -219,7 +219,7 @@ export default function ContactPage() {
             <div className="relative" ref={dropdownRef}>
               <label
                 htmlFor="service"
-                className="block mb-2 text-sm  text-gray-500 font-semibold"
+                className="block mb-2 text-sm  text-gray-500 font-semibold dark:text-white"
               >
                 Services
               </label>
@@ -241,7 +241,7 @@ export default function ContactPage() {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute z-10 mt-2 w-full border rounded bg-white p-2 shadow-md max-h-60 overflow-y-auto">
+                <div className="absolute z-10 mt-2 w-full border rounded bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-white p-2 shadow-md max-h-60 overflow-y-auto">
                   <div className="grid grid-cols-2 gap-2">
                     {allServices.map((service) => (
                       <label key={service} className="flex items-center gap-2">
@@ -270,14 +270,14 @@ export default function ContactPage() {
             <div>
               <label
                 htmlFor="message"
-                className="block mb-2 text-sm  text-gray-500 font-semibold"
+                className="block mb-2 text-sm  text-gray-500 font-semibold dark:text-white"
               >
                 Message
               </label>
               <textarea
                 name="message"
                 rows={4}
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400"
+                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>

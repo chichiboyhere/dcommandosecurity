@@ -2,25 +2,28 @@ const VisionMission = () => {
   return (
     <section
       id="ourGoals"
-      className="bg-[#FDE5B4] p-8 w-full  py-12 px-4"
+      className="bg-[#FDE5B4] p-8 w-full  py-12 px-4  dark:bg-gray-800"
       data-aos="fade-up"
     >
-      <h2 className="text-4xl font-bold text-blue-900 mb-6 " data-aos="fade-up">
+      <h2
+        className="text-4xl font-bold text-blue-900 mb-6 dark:text-white"
+        data-aos="fade-up"
+      >
         Vision, Mission & Core Principles
       </h2>
       <div className="space-y-10">
         <div className="md:grid md:grid-cols-2">
           <div className="text-black">
-            <div className="border-t-6 border-t-blue-900 pt-2 w-17">
+            <div className="border-t-6 border-t-blue-900 dark:border-white pt-2 w-17">
               <h3
-                className="font-semibold text-2xl mb-2 text-blue-900 "
+                className="font-semibold text-2xl mb-2 text-blue-900 dark:text-white"
                 data-aos="fade-up"
               >
                 Vision
               </h3>
             </div>
 
-            <p className="text-xl" data-aos="fade-up">
+            <p className="text-xl dark:text-[#ffffffcf]" data-aos="fade-up">
               To become Nigeria’s most trusted security provider, driven by
               innovation, integrity, and unmatched professionalism.
             </p>
@@ -29,15 +32,15 @@ const VisionMission = () => {
         <div className="md:grid md:grid-cols-2">
           <div></div>
           <div className="text-black">
-            <div className="border-t-6 border-t-blue-900 pt-2 w-22">
+            <div className="border-t-6 border-t-blue-900 dark:border-white pt-2 w-22">
               <h3
-                className="font-semibold text-2xl mb-2 text-blue-900 "
+                className="font-semibold text-2xl mb-2 text-blue-900  dark:text-white"
                 data-aos="fade-up"
               >
                 Mission
               </h3>
             </div>
-            <p className="text-xl" data-aos="fade-up">
+            <p className="text-xl dark:text-[#ffffffcf]" data-aos="fade-up">
               To safeguard lives, assets, and national interests by delivering
               proactive, technology-driven, and client-centric security
               solutions.
@@ -46,15 +49,15 @@ const VisionMission = () => {
         </div>
         <div className="md:grid md:grid-cols-2">
           <div className="text-black">
-            <div className="border-t-6 border-t-blue-900 pt-2 w-27">
+            <div className="border-t-6 border-t-blue-900 dark:border-white pt-2 w-27">
               <h3
-                className="font-semibold text-2xl mb-2 text-blue-900 "
+                className="font-semibold text-2xl mb-2 text-blue-900 dark:text-white"
                 data-aos="fade-up"
               >
                 Core Principles
               </h3>
             </div>
-            <p className="text-xl" data-aos="fade-up">
+            <p className="text-xl dark:text-[#ffffffcf]" data-aos="fade-up">
               We are guided by the following principles:
             </p>
           </div>

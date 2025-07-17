@@ -41,7 +41,7 @@ const BannerSlider = () => {
   const translateX = -(currentIndex * 100);
 
   return (
-    <div className="relative max-w-screen-xl mx-auto p-4 w-full my-8">
+    <div className="relative max-w-screen-xl mx-auto p-4 w-full my-8 dark:border-gray-700 bg-white dark:bg-gray-800">
       <h1 className="text-2xl font-bold mb-4 text-center text-blue-900">
         Explore our gallery of gallent men at work
       </h1>

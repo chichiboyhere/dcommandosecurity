@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import LoaderSpinner from "./LoaderSpinner";
 
 function CommentForm({ postId }: { postId: string }) {
   const router = useRouter();
@@ -51,7 +52,7 @@ function CommentForm({ postId }: { postId: string }) {
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded dark:border-gray-700 bg-white dark:bg-gray-800"
           required
         />
         <input
@@ -59,14 +60,14 @@ function CommentForm({ postId }: { postId: string }) {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded dark:border-gray-700 bg-white dark:bg-gray-800"
           required
         />
         <textarea
           placeholder="Comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="w-full border p-2 rounded h-24"
+          className="w-full border p-2 rounded h-24 dark:border-gray-700 bg-white dark:bg-gray-800"
           required
         />
         {error && <p className="text-red-600">{error}</p>}
@@ -76,6 +77,7 @@ function CommentForm({ postId }: { postId: string }) {
           disabled={loading}
           className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
         >
+          {loading && <LoaderSpinner size={16} />}
           {loading ? "Posting..." : "Post Comment"}
         </button>
       </form>

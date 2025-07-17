@@ -23,7 +23,7 @@ const iconMap = {
   vendorSourcing: Handshake,
 };
 import Image from "next/image";
-// import { X } from "lucide-react";
+
 import { Modal } from "@/components/ui/ModalWithRef";
 
 import { services } from "@/data/servicesData";
@@ -49,9 +49,12 @@ const Services = () => {
     setIsModalOpen(false);
   };
   return (
-    <section className=" py-12 px-4" data-aos="fade-up">
+    <section
+      className=" py-12 px-4 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      data-aos="fade-up "
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-900 ">
+        <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
           IN A WORLD RIDDEN WITH UNCERTAINTIES
         </h2>
         <h5 className="text-lg font-medium text-center text-gray-800 mb-8">
@@ -87,12 +90,14 @@ const Services = () => {
                     >
                       {Icon && <Icon size={26} color="white" />}
                     </div>
-                    <h1 className="text-3xl font-semibold text-blue-900">
+                    <h1 className="text-3xl font-semibold text-blue-900 dark:text-white">
                       {title}
                     </h1>
                   </div>
 
-                  <p className="text-gray-800 py-5">{desc}</p>
+                  <p className="text-gray-800 py-5 dark:text-[#ffffffcf]">
+                    {desc}
+                  </p>
                   {id === "vendorSourcing" ? (
                     <>
                       <p>
@@ -112,7 +117,7 @@ const Services = () => {
                         </span>
                         ,...we have you covered.
                       </p>
-                      <p className="underline underline-offset-3 decoration-blue-600 text-blue-600 italic">
+                      <p className="underline underline-offset-3 decoration-blue-600 text-blue-600 italic dark:text-blue-400 dark:decoration-blue-400">
                         <Link href="/gallery#galleryOutSourced">
                           Check out what one of our vendors did on Mr
                           Phenomenal&apos;s wedding
@@ -124,7 +129,7 @@ const Services = () => {
                   )}
                   <button
                     onClick={() => openForm(id, title)} // Sets selected service and opens modal
-                    className="items-center justify-center mt-2 text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800 transition"
+                    className="items-center justify-center mt-2 text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800  transition dark:bg-blue-400 "
                   >
                     Book Now
                   </button>

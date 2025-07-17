@@ -33,7 +33,10 @@ const GalleryOutSourced = () => {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
   return (
-    <section className="text-blue-900 my-12" id="galleryOutSourced">
+    <section
+      className="text-blue-900 my-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      id="galleryOutSourced"
+    >
       <h1 className="text-4xl font-bold mb-8 text-center">
         Mr Phenomenal&apos;s Wedding Occasion - One of Our Outsourced Services
       </h1>

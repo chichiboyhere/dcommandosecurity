@@ -5,15 +5,16 @@ import {
   FaWhatsapp,
 } from "react-icons/fa6";
 import { services } from "@/data/servicesData";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white p-8 relative">
+    <footer className="bg-blue-900 dark:bg-gray-800 text-white p-8 relative">
       <div
         className="absolute inset-0 opacity-10 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/blogs/blog1.jpg')" }}
       ></div>
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="relative grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Company Info */}
         <div>
           <h4 className="font-bold mb-2">Company</h4>
@@ -24,7 +25,7 @@ const Footer = () => {
             <li>123 Security Blvd, Victoria Island, Lagos</li>
             <li>RC: 1234567</li>
             <li>Phone: +234 801 234 5678</li>
-            <li>Email: info@damionsecurity.com</li>
+            {/* <li>Email: info@damionsecurity.com</li> */}
           </ul>
         </div>
 
@@ -73,65 +74,68 @@ const Footer = () => {
               Subscribe
             </button>
           </form>
-          <p className="text-sm">Phone: +234 809 876 5432</p>
-          <p className="text-sm">Email: contact@damionsecurity.com</p>
+          <p className="text-sm">Phone: +234 703 822 3500</p>
+          <p className="text-sm">Email: info@damionsecurity.com</p>
         </div>
       </div>
 
       <hr className="my-5 mx-auto border-gray-400" />
 
-      <div className="grid grid-cols-1 md:flex align-center justify-between gap-4">
+      <div className=" grid grid-cols-1 md:flex align-center justify-between gap-4">
         <p className="text-center text-[15px] flex-2">
           &copy; 2015 - {new Date().getFullYear()} Damion Security | All rights
           reserved.
         </p>
 
-        <div className="flex justify-center gap-5 flex-1">
-          <a href="/terms" className="text-sm underline hover:text-yellow-300">
+        <div className="z-50 flex justify-center gap-5 flex-1">
+          <Link
+            href="/terms"
+            className="text-sm underline hover:text-yellow-300"
+          >
             Terms of use
-          </a>
-          <a
+          </Link>
+          <Link
             href="/privacy"
             className="text-sm underline hover:text-yellow-300"
           >
             Privacy policy
-          </a>
+          </Link>
         </div>
 
         {/* Socials */}
-        <div className="flex flex-1 gap-5 md:gap-4 cursor-pointer ">
-          <a
+        <div className="z-50 flex flex-1 gap-5 md:gap-4 cursor-pointer ">
+          <Link
             href="https://facebook.com/#"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-blue-900 transition-transform duration-300 hover:scale-110 hover:bg-yellow-500"
           >
             <FaFacebookF />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://instagram.com/dcommandoeventsecurity_backup"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-blue-900 transition-transform duration-300 hover:scale-110 hover:bg-yellow-500"
           >
             <FaInstagram />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://twitter.com/#"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-blue-900 transition-transform duration-300 hover:scale-110 hover:bg-yellow-500"
           >
             <FaXTwitter />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://whatsapp.com/#"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-yellow-400 text-blue-900 transition-transform duration-300 hover:scale-110 hover:bg-yellow-500"
           >
             <FaWhatsapp />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

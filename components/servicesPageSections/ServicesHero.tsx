@@ -6,7 +6,7 @@ import { services } from "@/data/servicesData";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden h-[100vh] flex items-center justify-center">
+    <section className="relative overflow-hidden h-[100vh] flex items-center justify-center dark:text-[#ffffffcf] bg-white dark:bg-gray-800">
       <div className="w-full h-full z-10 relative flex items-center justify-center">
         <Image
           src={servicesHero}

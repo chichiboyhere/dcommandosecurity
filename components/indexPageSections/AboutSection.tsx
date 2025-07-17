@@ -5,7 +5,10 @@ import Link from "next/link";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="p-8 space-y-12">
+    <section
+      id="about"
+      className="p-8 space-y-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+    >
       {/* Row 1 */}
       <div
         className="flex flex-col md:flex-row gap-8 items-center md:px-12"
@@ -21,8 +24,10 @@ const AboutSection = () => {
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h3 className="text-2xl font-bold mb-4 text-blue-900">About Us</h3>
-          <p className="text-gray-800 text-xl">
+          <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
+            About Us
+          </h3>
+          <p className="text-gray-800 text-xl dark:text-[#ffffffcf]">
             We provide top-notch security systems and services that give you
             peace of mind. At the heart of our success lies innovation.
             Dcommando Security embraces modern technology to proactively tackle
@@ -52,10 +57,10 @@ const AboutSection = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <h3 className="text-2xl font-bold mb-4 text-blue-900">
+          <h3 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
             Our Expertise
           </h3>
-          <p className="text-gray-800 text-xl">
+          <p className="text-gray-800 text-xl dark:text-[#ffffffcf]">
             From residential to corporate security solutions, we bring services
             that safe-guard your interest on all fronts. Our services cover
             escort, personal protection and security of your work-environment,

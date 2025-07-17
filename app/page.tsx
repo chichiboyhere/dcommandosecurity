@@ -11,9 +11,9 @@ import BlogSection from "@/components/indexPageSections/BlogSection";
 
 export default function Home() {
   return (
-    <div className="text-white">
+    <div className="text-white dark:bg-gray-800">
       {/* Main */}
-      <main className="pt-20">
+      <main className="pt-16">
         <HeroSection />
 
         <AOSInitializer />

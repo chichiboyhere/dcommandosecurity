@@ -5,6 +5,7 @@ import { useState } from "react";
 import { X, Menu } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/theme/theme-toggle";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,13 +35,14 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-white text-blue-900 z-55 shadow">
+    <header className="fixed top-0 w-full bg-white text-blue-900 z-55 shadow dark:bg-[#191919]  dark:text-[#ffffffcf]">
       <div className="flex justify-between items-center p-4">
         <Link href="/">
           <h1 className="text-xl font-bold">Damion Security</h1>
         </Link>
+        <ThemeToggle />
         <button onClick={() => setMenuOpen(true)}>
-          <Menu className="text-blue-900 w-6 h-6" />
+          <Menu className="text-blue-900 w-6 h-6 dark:text-[#ffffffcf]" />
         </button>
       </div>
 
@@ -52,13 +54,13 @@ const Header = () => {
             animate="visible"
             exit="exit"
             variants={containerVariants}
-            className="fixed inset-0 z-50 bg-white  backdrop-blur-lg p-8 flex flex-col items-center justify-center"
+            className="fixed inset-0 z-50 bg-white dark:bg-gray-800 backdrop-blur-lg p-8 flex flex-col items-center justify-center"
           >
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-4 right-4"
             >
-              <X className="w-6 h-6 text-blue-900" />
+              <X className="w-6 h-6 text-blue-900 dark:text-white" />
             </button>
 
             <motion.nav
@@ -72,7 +74,7 @@ const Header = () => {
                   key={item.label}
                   custom={index}
                   variants={itemVariants}
-                  className="text-blue-900 text-xl font-semibold text-center py-4 border-b border-blue-300 transition-colors duration-300 hover:text-blue-600 cursor-pointer"
+                  className="text-blue-900 dark:text-[#ffffffcf] text-xl font-semibold text-center py-4 border-b border-blue-300 transition-colors duration-300 hover:text-blue-600 cursor-pointer"
                 >
                   <Link
                     href={item.href}

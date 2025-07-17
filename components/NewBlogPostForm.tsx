@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import LoaderSpinner from "./LoaderSpinner";
 
 function NewBlogPostForm() {
   const router = useRouter();
@@ -140,6 +141,8 @@ function NewBlogPostForm() {
           className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
           disabled={loading}
         >
+          {" "}
+          {loading && <LoaderSpinner size={16} />}
           {loading ? "Posting..." : "Post Blog"}
         </button>
       </form>

@@ -3,7 +3,7 @@ import GalleryOutSourced from "@/components/galleryPageSections/GalleryOutSource
 import GalleryVideos from "@/components/galleryPageSections/GalleryVideos";
 const Gallery = () => {
   return (
-    <div className=" p-8 bg-gray-100 shadow-md">
+    <div className=" p-8 bg-gray-100 shadow-md dark:bg-gray-800">
       <GalleryDefault />
       <GalleryOutSourced />
       <GalleryVideos />

@@ -3,14 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-//import localFont from "next/font/local";
-import BackToTop from "@/components/BackToTop";
-// const myFont = localFont({
-//   src: "./public/fonts/HalogenBaba.otf",
-//   variable: "--font-my-font", // CSS variable name
-// });
+import RouteSpinner from "@/components/RouteSpinner";
+import ThemeProvider from "@/theme/theme-provider";
 
-// I'm changing the default font from Geist to myFont
+import BackToTop from "@/components/BackToTop";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,14 +29,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={` ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <BackToTop />
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <RouteSpinner />
+          {children}
+          <BackToTop />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

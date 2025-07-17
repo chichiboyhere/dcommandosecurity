@@ -31,19 +31,22 @@ const testimonials = [
 // Main JSX
 export default function Testimonial() {
   return (
-    <section className="bg-blue-50 py-12 px-4" data-aos="fade-up">
+    <section
+      className="bg-blue-50 dark:bg-gray-800 py-12 px-4 "
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-900 ">
+        <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
           What our esteemed customers say
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="flex flex-col gap-2 px-4">
-              <h4 className="text-xl font-bold my-4 text-blue-900 ">
+              <h4 className="text-xl font-bold my-4 text-blue-900 dark:text-white">
                 &quot;{testimonial.title}&quot;
               </h4>
-              <h3 className="text-base italic text-blue-900 mb-4">
+              <h3 className="text-base italic text-blue-900 mb-4 dark:text-white">
                 &quot;{testimonial.desc}&quot;
               </h3>
 
@@ -58,11 +61,13 @@ export default function Testimonial() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="text-base font-semibold text-blue-900">
+                  <h3 className="text-base font-semibold text-blue-900 dark:text-white">
                     {testimonial.client}
                   </h3>
 
-                  <p className="text-gray-800">{testimonial.location}</p>
+                  <p className="text-gray-800 dark:text-[#ffffffcf]">
+                    {testimonial.location}
+                  </p>
                   <div className="flex flex-row gap-3">
                     <Star size={14} fill="gold" color="gold" />
                     <Star size={14} fill="gold" color="gold" />

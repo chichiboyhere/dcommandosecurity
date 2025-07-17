@@ -205,9 +205,11 @@ export default async function BlogDetailPage({ params }: { params: any }) {
   }
 
   return (
-    <>
-      <div className="max-w-3xl mx-auto py-10 px-4 space-y-6">
-        <h1 className="text-3xl font-bold mt-6 text-blue-900">{post.title}</h1>
+    <div className="dark:bg-gray-800">
+      <div className="max-w-3xl mx-auto py-10 px-4 space-y-6 dark:text-[#ffffffcf] bg-white dark:bg-gray-800">
+        <h1 className="text-3xl font-bold mt-6 text-blue-900 dark:text-white">
+          {post.title}
+        </h1>
 
         {post.images && post.images.length > 0 && (
           <div className="mt-6 grid grid-cols-1 gap-4">
@@ -228,24 +230,28 @@ export default async function BlogDetailPage({ params }: { params: any }) {
         {/* <p className="text-gray-700 whitespace-pre-line"> */}
         {/* Comments */}
         <div className="mt-10">
-          <h2 className="text-xl font-semibold mb-4">Comments</h2>
+          <h2 className="text-xl font-semibold mb-4 dark:text-white">
+            Comments
+          </h2>
           {post.comments?.length > 0 ? (
             [...post.comments].reverse().map((comment: any, index: number) => (
               <div key={index} className="mb-4 p-4 border rounded">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-[#ffffffcf]">
                   {comment.name} — {new Date(comment.postedAt).toLocaleString()}
                 </p>
-                <p className="mt-1">{comment.comment}</p>
+                <p className="mt-1 dark:text-[#ffffffcf]">{comment.comment}</p>
               </div>
             ))
           ) : (
-            <p className="text-gray-500">No comments yet.</p>
+            <p className="text-gray-500 dark:text-[#ffffffcf]">
+              No comments yet.
+            </p>
           )}
         </div>
 
         <CommentForm postId={id} />
       </div>
       <RelatedPosts postId={id} />
-    </>
+    </div>
   );
 }

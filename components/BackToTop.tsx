@@ -15,7 +15,7 @@ const BackToTop = () => {
     <>
       {showScrollTop && (
         <button
-          className="fixed bottom-6 right-6 bg-yellow-400 p-2 rounded-full text-blue-900 shadow-lg cursor-pointer z-50"
+          className="fixed bottom-6 right-6 bg-yellow-400 p-2 rounded-full text-blue-900 shadow-lg cursor-pointer z-60"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <ChevronUp />

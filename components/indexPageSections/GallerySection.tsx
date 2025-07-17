@@ -41,8 +41,8 @@ const GallerySlideSection = () => {
   const translateX = -(currentIndex * 100);
 
   return (
-    <div className="relative max-w-screen-xl mx-auto p-4 w-full my-8">
-      <h1 className="text-2xl font-bold mb-4 text-center text-blue-900">
+    <div className="relative max-w-screen-xl mx-auto p-4 w-full my-8 dark:text-[#ffffffcf] bg-white dark:bg-gray-800">
+      <h1 className="text-2xl font-bold mb-4 text-center text-blue-900 dark:text-white">
         Explore our gallery of gallent men at work
       </h1>
       {/* Slider wrapper */}

@@ -30,9 +30,9 @@ import { services } from "@/data/servicesData";
 // Main JSX
 export default function ServicesSection() {
   return (
-    <section className=" py-12 px-4" data-aos="fade-up">
+    <section className=" py-12 px-4 " data-aos="fade-up">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-900 ">
+        <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white ">
           HOW WE HELP YOU ACHIEVE SAFETY
         </h2>
         <h5 className="text-lg font-medium text-center text-gray-800 mb-8">
@@ -52,12 +52,12 @@ export default function ServicesSection() {
                   >
                     {Icon && <Icon size={26} color="white" />}
                   </div>
-                  <h3 className="text-xl font-semibold text-blue-900">
+                  <h3 className="text-xl font-semibold text-blue-900 dark:text-white">
                     {title}
                   </h3>
                 </div>
                 {/* Display the first 100 characters of the description */}
-                <p className="text-gray-800 pl-14 ">
+                <p className="text-gray-800 pl-14 dark:text-[#ffffffcf] ">
                   <Link href="/services">
                     {desc.slice(0, 200)}
                     <span className=" cursor-pointer  text-blue-600 italic">

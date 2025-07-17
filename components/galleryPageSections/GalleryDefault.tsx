@@ -10,7 +10,10 @@ const GalleryDefault = () => {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
   return (
-    <section className="text-blue-900 my-12" id="galleryDefault">
+    <section
+      className="text-blue-900 my-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      id="galleryDefault"
+    >
       <h1 className="text-4xl font-bold mb-8 text-center">
         Client Image Gallery
       </h1>
@@ -63,7 +66,7 @@ const GalleryDefault = () => {
             </div>
 
             {/* DESCRIPTION */}
-            <p className="text-gray-700 italic text-sm my-4">
+            <p className="text-gray-700 italic text-sm my-4 dark:text-[#ffffffcf]">
               {galleryPic.desc}
             </p>
           </div>

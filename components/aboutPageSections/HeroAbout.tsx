@@ -8,7 +8,7 @@ const HeroSection = () => {
     { id: "ourManagement", msg: "Our Management" },
   ];
   return (
-    <section className="relative overflow-hidden h-[100vh]  flex items-center justify-center ">
+    <section className="relative overflow-hidden h-[100vh]  flex items-center justify-center dark:text-[#ffffffcf] bg-white dark:bg-gray-800">
       <div
         className="absolute  top-0 left-0 w-full h-full transition-opacity duration-1000 
              opacity-100 z-10"

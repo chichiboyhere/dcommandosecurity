@@ -65,7 +65,10 @@ const GalleryVideos = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
-    <section className="text-blue-900 my-12" id="galleryVideos">
+    <section
+      className="text-blue-900 my-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      id="galleryVideos"
+    >
       <h1 className="text-4xl font-bold mb-8 text-center">
         Videos of Dcommando Security at Work
       </h1>
@@ -92,7 +95,7 @@ const GalleryVideos = () => {
               <source src={`/videos/${vid.video}`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <p className="text-gray-700 italic text-sm my-4">
+            <p className="text-gray-700 italic text-sm my-4 dark:text-[#ffffffcf]">
               {galleryVids[index].desc}
             </p>
           </div>

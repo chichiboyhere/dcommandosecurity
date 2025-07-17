@@ -10,9 +10,12 @@ const ManagementTeam = () => {
 
   return (
     <>
-      <section id="ourManagement" className="px-4">
+      <section
+        id="ourManagement"
+        className="px-4 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      >
         <h2
-          className="text-5xl font-bold text-blue-700 mb-6"
+          className="text-5xl font-bold text-blue-700 dark:text-white mb-6"
           data-aos="fade-up"
         >
           Management Team
@@ -35,8 +38,12 @@ const ManagementTeam = () => {
                 height={300}
                 className="rounded-full mx-auto mb-2"
               />
-              <p className="font-bold text-black">{member.name}</p>
-              <p className="text-sm text-gray-600">{member.title}</p>
+              <p className="font-bold text-black dark:text-[#ffffffcf]">
+                {member.name}
+              </p>
+              <p className="text-sm text-gray-600 dark:text-[#ffffffcf]">
+                {member.title}
+              </p>
             </div>
           ))}
         </div>
@@ -55,7 +62,7 @@ const ManagementTeam = () => {
             />
             <div className="text-black max-h-[300px] overflow-y-auto">
               <h3 className="text-xl font-bold mb-2">{selectedMember.name}</h3>
-              <p className="text-sm mb-1 font-semibold text-gray-700">
+              <p className="text-sm mb-1 font-semibold text-gray-700 ">
                 {selectedMember.title}
               </p>
               <p className="text-sm leading-relaxed">{selectedMember.bio}</p>
