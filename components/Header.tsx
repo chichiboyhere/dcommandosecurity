@@ -6,7 +6,7 @@ import { X, Menu } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "@/theme/theme-toggle";
-
+import Image from "next/image";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -36,14 +36,25 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white text-blue-900 z-55 shadow dark:bg-[#191919]  dark:text-[#ffffffcf]">
-      <div className="flex justify-between items-center p-4">
-        <Link href="/">
-          <h1 className="text-xl font-bold">Damion Security</h1>
+      <div className="flex justify-between items-center md:p-4  p-2">
+        <Link
+          href="/"
+          className="bg-transparent dark:bg-gray-300 py-2 px-5 rounded-4xl"
+        >
+          <Image
+            src="/images/brand/dcommando4.png"
+            alt="brand logo"
+            width={100}
+            height={100}
+            className="w-48 h-8"
+          />
         </Link>
-        <ThemeToggle />
-        <button onClick={() => setMenuOpen(true)}>
-          <Menu className="text-blue-900 w-6 h-6 dark:text-[#ffffffcf]" />
-        </button>
+        <div className="flex items-center space-x-4">
+          <ThemeToggle />
+          <button onClick={() => setMenuOpen(true)}>
+            <Menu className="text-blue-900 w-6 h-6 dark:text-[#ffffffcf]" />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

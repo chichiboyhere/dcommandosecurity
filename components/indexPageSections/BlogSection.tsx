@@ -17,7 +17,7 @@ export default async function BlogPage() {
   return (
     <div className="mx-auto p-6 ">
       <h1 className="text-3xl font-bold my-10 text-center text-blue-900 dark:text-white">
-        Damion Security Blog
+        Dcommando Security Blog
       </h1>
 
       {blogs.length === 0 ? (

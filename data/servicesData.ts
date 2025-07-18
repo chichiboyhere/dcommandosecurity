@@ -65,7 +65,7 @@ export const services = [
   },
   {
     id: "cypher",
-    title: "Cyber Security Solutions/surveillance",
+    title: "Cyber Security and surveillance",
     icon: "cyber",
     image: "/images/services/cyber.jpg",
     desc: "Protect your digital assets with our end-to-end cybersecurity infrastructure. We go great lengths by deploying state-of-the-art security solutions, including network analysis, penetration testing, vulnerability scanning and intrusion detection to protect against cyber threats. We also offer real-time monitoring and advanced surveillance systems to keep your digital assets secure at all times. We install CCTV and video surveillance systems to monitor your premises and ensure a safe and secure environment for your guests and staff.",

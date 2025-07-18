@@ -33,7 +33,7 @@ const HeroSection = () => {
               <a
                 key={service.id}
                 href={`#${service.id}`}
-                className={`block text-blue-900 text-xl font-semibold text-center p-2 md:p-3 transition duration-300 hover:text-blue-600 ${
+                className={`block text-blue-900 text-xl font-semibold text-center p-2 md:p-2.5 transition duration-300 hover:text-blue-600 ${
                   index === services.length - 1
                     ? ""
                     : "border-b border-blue-300"

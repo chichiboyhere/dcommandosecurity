@@ -20,12 +20,12 @@ const Footer = () => {
           <h4 className="font-bold mb-2">Company</h4>
           <ul className="space-y-1 text-sm">
             <li>
-              <strong>Damion Security Ltd.</strong>
+              <strong>Dcommando Security Ltd.</strong>
             </li>
             <li>123 Security Blvd, Victoria Island, Lagos</li>
             <li>RC: 1234567</li>
             <li>Phone: +234 801 234 5678</li>
-            {/* <li>Email: info@damionsecurity.com</li> */}
+            {/* <li>Email: info@dcommandosecurity.com</li> */}
           </ul>
         </div>
 
@@ -75,7 +75,7 @@ const Footer = () => {
             </button>
           </form>
           <p className="text-sm">Phone: +234 703 822 3500</p>
-          <p className="text-sm">Email: info@damionsecurity.com</p>
+          <p className="text-sm">Email: info@dcommandosecurity.com</p>
         </div>
       </div>
 
@@ -83,8 +83,8 @@ const Footer = () => {
 
       <div className=" grid grid-cols-1 md:flex align-center justify-between gap-4">
         <p className="text-center text-[15px] flex-2">
-          &copy; 2015 - {new Date().getFullYear()} Damion Security | All rights
-          reserved.
+          &copy; 2015 - {new Date().getFullYear()} Dcommando Security | All
+          rights reserved.
         </p>
 
         <div className="z-50 flex justify-center gap-5 flex-1">

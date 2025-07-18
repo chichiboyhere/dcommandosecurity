@@ -1,8 +1,8 @@
 # Terms of Use
 
-*Last updated: July 15, 2025*
+_Last updated: July 15, 2025_
 
-Welcome to **Damion Security Ltd.**. These Terms of Use ("Terms") govern your use of our website, services, and applications (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
+Welcome to **Dcommando Security Ltd.**. These Terms of Use ("Terms") govern your use of our website, services, and applications (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.
 
 ## 1. Acceptance of Terms
 
@@ -10,13 +10,13 @@ By accessing and using our Services, you accept and agree to be bound by the ter
 
 ## 2. Description of Services
 
-Damion Security offers a variety of security-related services including but not limited to:
+Dcommando Security offers a variety of security-related services including but not limited to:
 
-* Cybersecurity consultancy
-* Bodyguard and escort services
-* Event bouncers and crowd control
-* Trained security guards and ushers
-* Vendor sourcing for security needs
+- Cybersecurity consultancy
+- Bodyguard and escort services
+- Event bouncers and crowd control
+- Trained security guards and ushers
+- Vendor sourcing for security needs
 
 ## 3. Eligibility
 
@@ -26,9 +26,9 @@ You must be at least 18 years old to use our Services. By using the Services, yo
 
 You agree not to:
 
-* Use the Services for unlawful purposes
-* Violate any local, state, national or international law or regulation
-* Interfere with or disrupt the Services or servers/networks
+- Use the Services for unlawful purposes
+- Violate any local, state, national or international law or regulation
+- Interfere with or disrupt the Services or servers/networks
 
 ## 5. Payments
 
@@ -36,11 +36,11 @@ All service fees must be paid in advance unless stated otherwise. Payments are s
 
 ## 6. Intellectual Property
 
-All content on the site, including text, graphics, logos, and service marks, are the property of Damion Security or its licensors and are protected by Nigerian and international copyright laws.
+All content on the site, including text, graphics, logos, and service marks, are the property of Dcommando Security or its licensors and are protected by Nigerian and international copyright laws.
 
 ## 7. Limitation of Liability
 
-To the maximum extent permitted by law, Damion Security shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from the use or inability to use the Services.
+To the maximum extent permitted by law, Dcommando Security shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from the use or inability to use the Services.
 
 ## 8. Governing Law
 
@@ -54,37 +54,37 @@ We reserve the right to update or modify these Terms at any time. Continued use 
 
 If you have any questions about these Terms, please contact us at:
 
-* Email: [legal@damionsecurity.com](mailto:legal@damionsecurity.com)
-* Phone: +234 809 876 5432
+- Email: [legal@dcommandosecurity.com](mailto:legal@dcommandosecurity.com)
+- Phone: +234 809 876 5432
 
 ---
 
-# Privacy Policy
+# \*\*Privacy Policy
 
-*Last updated: July 15, 2025*
+_Last updated: July 15, 2025_
 
-**Damion Security Ltd.** is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and disclose information we obtain through our Services.
+**Dcommando Security Ltd.** is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and disclose information we obtain through our Services.
 
 ## 1. Information We Collect
 
-* **Personal Information**: Name, email, phone number, service preferences, etc.
-* **Technical Information**: IP address, browser type, device info.
-* **Cookies**: We use cookies to improve user experience and for analytics.
+- **Personal Information**: Name, email, phone number, service preferences, etc.
+- **Technical Information**: IP address, browser type, device info.
+- **Cookies**: We use cookies to improve user experience and for analytics.
 
 ## 2. How We Use Your Information
 
 We use your information to:
 
-* Provide and improve our services
-* Communicate with you regarding your inquiries or orders
-* Comply with legal obligations
+- Provide and improve our services
+- Communicate with you regarding your inquiries or orders
+- Comply with legal obligations
 
 ## 3. Sharing of Information
 
 We do not sell your personal data. We may share it with:
 
-* Service providers assisting with operations
-* Legal authorities if required by law
+- Service providers assisting with operations
+- Legal authorities if required by law
 
 ## 4. Data Security
 
@@ -94,9 +94,9 @@ We implement reasonable safeguards to protect your information. However, no elec
 
 Under Nigerian law and applicable international privacy regulations (e.g., GDPR):
 
-* You have the right to access, correct, or delete your data
-* You may request restriction of processing
-* You may opt out of marketing communications
+- You have the right to access, correct, or delete your data
+- You may request restriction of processing
+- You may opt out of marketing communications
 
 ## 6. Data Retention
 
@@ -118,5 +118,5 @@ We may update this Privacy Policy periodically. Changes will be posted on this p
 
 For questions about this policy or to exercise your privacy rights:
 
-* Email: [privacy@damionsecurity.com](mailto:privacy@damionsecurity.com)
-* Phone: +234 809 876 5432
+- Email: [info@dcommandosecurity.com](mailto:info@dcommandosecurity.com)
+- Phone: +234 703 822 3500

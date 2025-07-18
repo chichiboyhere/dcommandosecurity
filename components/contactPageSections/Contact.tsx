@@ -88,11 +88,14 @@ export default function ContactPage() {
             <div className="space-y-7 text-gray-600">
               <div className="flex items-center gap-4 dark:text-white">
                 <MapPin className="w-5 h-5 " />
-                <span className="font-500">123 Allen Avenue, Ikeja, Lagos</span>
+                <span className="font-500">
+                  14 Faosat Somade Street, Bako Estate, Irawo, Mile 12, Lagos
+                  State, Nigeria.
+                </span>
               </div>
               <div className="flex items-center gap-4 dark:text-white">
                 <Mail className="w-5 h-5" />
-                <span className="font-500">info@damionsecurity.com</span>
+                <span className="font-500">info@dcommandosecurity.com</span>
               </div>
               <div className="flex items-center gap-4 dark:text-white">
                 <Phone className="w-5 h-5 " />
@@ -113,7 +116,7 @@ export default function ContactPage() {
             </h2>
             <div className="relative h-80">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.671665946957!2d3.342!3d6.6018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8ef6b0c1b7a1%3A0x26b1e0d62d743169!2sAllen%20Ave%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1721047082691!5m2!1sen!2sng"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1465.608903438799!2d3.413523915338462!3d6.595882507096429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s14%20Faosat%20Somade%20Street%2C%20Bako%20Estate%2C%20Irawo%2C%20Mile%2012%2C%20Lagos%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20State%2C%20Nigeria.!5e0!3m2!1sen!2sng!4v1752795603501!5m2!1sen!2sng"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -122,9 +125,12 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
               <div className="absolute bottom-2 left-2 bg-white p-2 text-sm shadow">
-                <p>123 Allen Avenue, Ikeja, Lagos</p>
+                <p>
+                  14 Faosat Somade Street, Bako Estate, Irawo, Mile 12, Lagos
+                  State, Nigeria.
+                </p>
                 <a
-                  href="https://maps.google.com?q=Allen+Ave,+Ikeja"
+                  href="https://maps.google.com?q=14+Faosat+Somade+Street,+Bako+Estate,+Irawo,+Mile+12,+Lagos+State,+Nigeria"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600"

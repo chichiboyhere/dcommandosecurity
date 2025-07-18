@@ -1,5 +1,5 @@
+import { Metadata } from "next";
 import HeroSection from "@/components/indexPageSections/HeroSection";
-
 import ServicesSection from "@/components/indexPageSections/ServicesSection";
 import AboutSection from "@/components/indexPageSections/AboutSection";
 import AOSInitializer from "@/components/AOSInitializer";
@@ -9,6 +9,17 @@ import GallerySlideSection from "@/components/indexPageSections/GallerySection";
 
 import BlogSection from "@/components/indexPageSections/BlogSection";
 
+export const metadata: Metadata = {
+  title: "Dcommando Security - Home page",
+  description: "Your sure plug for security services in Nigeria.",
+  keywords: [
+    "security",
+    "security services",
+    "event bouncers",
+    "bodyguard providers",
+    "ushering services",
+  ],
+};
 export default function Home() {
   return (
     <div className="text-white dark:bg-gray-800">

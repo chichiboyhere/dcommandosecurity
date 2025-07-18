@@ -1,35 +1,3 @@
-// const galleryVids = ["/videos/galleryVid1.mp4", "/videos/galleryVid2.mp4"];
-
-// const GalleryVideos = () => {
-//   return (
-//     <section
-//       className="p-8 bg-gray-100 text-blue-900 my-12 shadow-md"
-//       id="galleryVideos"
-//     >
-//       <h1 className="text-4xl font-bold mb-8 text-center">
-//         Videos on Damion Security at Work
-//       </h1>
-
-//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//         {galleryVids.map((vid, index) => (
-//           <video
-//             key={vid}
-//             controls
-//             preload="metadata"
-//             className="w-full h-auto rounded-lg shadow-md"
-//             poster={`/videos/thumb${index + 1}.jpg`} // Optional thumbnail
-//           >
-//             <source src={vid} type="video/mp4" />
-//             Your browser does not support the video tag.
-//           </video>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default GalleryVideos;
-
 "use client";
 import { useState } from "react";
 
@@ -66,7 +34,7 @@ const GalleryVideos = () => {
 
   return (
     <section
-      className="text-blue-900 my-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      className="text-blue-900 dark:text-white my-12 "
       id="galleryVideos"
     >
       <h1 className="text-4xl font-bold mb-8 text-center">

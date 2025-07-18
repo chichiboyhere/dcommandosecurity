@@ -14,7 +14,7 @@ const HistoryAndAchievements = () => {
             force.
           </p>
           <p className="mb-4 text-xl dark:text-[#ffffffcf]">
-            Damion Security embraces modern technology to proactively tackle
+            Dcommando Security embraces modern technology to proactively tackle
             security threats—deploying AI-driven surveillance, drones, GPS
             patrols, and real-time incident reporting.
           </p>

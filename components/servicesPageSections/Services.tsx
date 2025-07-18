@@ -49,11 +49,9 @@ const Services = () => {
     setIsModalOpen(false);
   };
   return (
-    <section
-      className=" py-12 px-4 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
-      data-aos="fade-up "
-    >
-      <div className="max-w-6xl mx-auto">
+    //className=" py-12 px-4 "
+    <section className="p-8 space-y-12 " data-aos="fade-up ">
+      <div className="max-w-6xl ">
         <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
           IN A WORLD RIDDEN WITH UNCERTAINTIES
         </h2>

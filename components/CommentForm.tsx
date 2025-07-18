@@ -75,7 +75,7 @@ function CommentForm({ postId }: { postId: string }) {
         <button
           type="submit"
           disabled={loading}
-          className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
+          className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50 dark:bg-blue-400"
         >
           {loading && <LoaderSpinner size={16} />}
           {loading ? "Posting..." : "Post Comment"}

@@ -11,7 +11,7 @@ const GalleryDefault = () => {
 
   return (
     <section
-      className="text-blue-900 my-12 dark:text-[#ffffffcf] bg-white dark:bg-gray-800"
+      className="text-blue-900 dark:text-white my-12 "
       id="galleryDefault"
     >
       <h1 className="text-4xl font-bold mb-8 text-center">

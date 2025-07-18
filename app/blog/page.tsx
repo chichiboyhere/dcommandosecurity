@@ -1,7 +1,20 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
+export const metadata: Metadata = {
+  title: "Dcommando Security - Blogs",
+  description: "We bring you security news and updates.",
+  keywords: [
+    "security tips",
+    "personal security",
+    "security news",
+    "security updates",
+    "stories on security",
+    "alertness",
+  ],
+};
 async function fetchBlogs() {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blog`, {
     cache: "no-store",
@@ -17,7 +30,7 @@ export default async function BlogPage() {
   return (
     <div className="mx-auto p-6 bg-gray-100 mt-10 dark:bg-gray-800  ">
       <h1 className="text-3xl font-bold my-10 text-center text-blue-900 dark:text-white">
-        Damion Security Blog
+        Dcommando Security Blog
       </h1>
 
       {blogs.length === 0 ? (
