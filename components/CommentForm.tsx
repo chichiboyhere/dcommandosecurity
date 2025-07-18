@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import LoaderSpinner from "./LoaderSpinner";
+import { handleApiError } from "@/lib/handleApiError";
 
 function CommentForm({ postId }: { postId: string }) {
   const router = useRouter();
@@ -36,8 +37,9 @@ function CommentForm({ postId }: { postId: string }) {
       setEmail("");
       setComment("");
       router.refresh(); // Refresh page to re-fetch blog data
-    } catch (err: any) {
-      setError(err.message);
+    } catch (error) {
+      return handleApiError(error, "POST /api/blog");
+      // setError(err.message);
     } finally {
       setLoading(false);
     }

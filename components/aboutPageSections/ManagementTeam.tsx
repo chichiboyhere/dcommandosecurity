@@ -5,8 +5,16 @@ import Image from "next/image";
 import { teamData } from "@/data/teamData";
 
 import { Modal } from "@/components/ui/Modal";
+// Type of TeamData
+export type TeamData = {
+  name: string;
+  title: string;
+  image: string;
+  bio: string;
+};
+
 const ManagementTeam = () => {
-  const [selectedMember, setSelectedMember] = useState(null);
+  const [selectedMember, setSelectedMember] = useState<TeamData | null>(null);
 
   return (
     <>

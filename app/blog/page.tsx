@@ -15,7 +15,25 @@ export const metadata: Metadata = {
     "alertness",
   ],
 };
-async function fetchBlogs() {
+
+interface Comment {
+  name: string;
+  email: string;
+  comment: string;
+  postedAt: Date;
+}
+
+interface BlogPost {
+  _id: string;
+  title: string;
+  content: string;
+  images: string[];
+  createdAt: Date;
+  updatedAt: Date;
+  comments: Comment[];
+}
+
+async function fetchBlogs(): Promise<BlogPost[]> {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blog`, {
     cache: "no-store",
   });

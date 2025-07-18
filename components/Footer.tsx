@@ -22,10 +22,9 @@ const Footer = () => {
             <li>
               <strong>Dcommando Security Ltd.</strong>
             </li>
-            <li>123 Security Blvd, Victoria Island, Lagos</li>
-            <li>RC: 1234567</li>
+            <li>14 Faosat Somade Street, Bako Estate,</li>
+            <li>Irawo, Mile 12, Lagos State, Nigeria.</li>
             <li>Phone: +234 801 234 5678</li>
-            {/* <li>Email: info@dcommandosecurity.com</li> */}
           </ul>
         </div>
 

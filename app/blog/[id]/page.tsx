@@ -1,14 +1,12 @@
 import { Metadata } from "next";
 import { connectDB } from "@/lib/mongodb";
-import BlogPost from "@/models/BlogPost";
-import mongoose from "mongoose";
+import BlogPostModel from "@/models/BlogPost";
 import CommentForm from "@/components/CommentForm";
 import ReactMarkdown from "react-markdown";
-export const dynamic = "force-dynamic";
 import Image from "next/image";
 import RelatedPosts from "@/components/RelatedPosts";
 import JsonLd from "@/components/JsonLd";
-//import { notFound } from "next/navigation";
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Dcommando Security - Blog story",
@@ -16,29 +14,27 @@ export const metadata: Metadata = {
   keywords: ["security news", "security updates", "stories on security"],
 };
 
-/**
- * // There are lots of redlines in the code below, particularly in the post section
- * Please generate  type/interface for the post using blogpost schema above
- * interface IBlogPost extends Document {
+interface Comment {
+  name: string;
+  comment: string;
+  postedAt: string;
+}
+
+export interface BlogPost {
+  _id: string;
   title: string;
   content: string;
-  images: mongoose.Types.ObjectId[]; // Change to ObjectId
-  createdAt: Date;
-  updatedAt: Date;
-  comments: IComment[];
-} */
+  images: string[];
+  comments?: Comment[];
+  createdAt: string;
+  updatedAt: string;
+}
 
-// export async function generateMetadata({ params }: { params: { id: string } }) {
-//   const post = await getBlogPost(params.id);
-//   if (!post) return notFound();
+interface Params {
+  id: string;
+}
 
-//   return {
-//     title: post.title,
-//     description: post.content,
-//   };
-// }
-
-export default async function BlogDetailPage({ params }: { params: any }) {
+export default async function BlogDetailPage({ params }: { params: Params }) {
   const id = params?.id;
 
   if (!id) {
@@ -46,7 +42,7 @@ export default async function BlogDetailPage({ params }: { params: any }) {
   }
 
   await connectDB();
-  const post = await BlogPost.findById(id).lean();
+  const post = await BlogPostModel.findById(id).lean<BlogPost>();
 
   if (!post) {
     return <div className="p-8 text-red-600">Blog post not found.</div>;
@@ -57,7 +53,7 @@ export default async function BlogDetailPage({ params }: { params: any }) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.content,
-    image: `https://dcommandosecurity.com/images/${post.images[0]}`, // full URL
+    image: `https://dcommandosecurity.com/images/${post.images[0]}`,
     author: {
       "@type": "Person",
       name: "Tony Jays",
@@ -89,40 +85,42 @@ export default async function BlogDetailPage({ params }: { params: any }) {
 
           {post.images && post.images.length > 0 && (
             <div className="mt-6 grid grid-cols-1 gap-4">
-              {post.images.map((id: mongoose.Types.ObjectId) => (
-                <Image
-                  key={id.toString()}
-                  src={`/api/images/${id}`}
-                  alt="Blog Image"
-                  className="w-full h-auto rounded shadow"
-                  width={500}
-                  height={300}
-                />
-              ))}
+              {post.images.map(
+                (
+                  id: string // Change to string if images are stored as strings
+                ) => (
+                  <Image
+                    key={id}
+                    src={`/api/images/${id}`}
+                    alt="Blog Image"
+                    className="w-full h-auto rounded shadow"
+                    width={500}
+                    height={300}
+                  />
+                )
+              )}
             </div>
           )}
 
           <ReactMarkdown>{post.content}</ReactMarkdown>
-          {/* <p className="text-gray-700 whitespace-pre-line"> */}
-          {/* Comments */}
+
           <div className="mt-10">
             <h2 className="text-xl font-semibold mb-4 dark:text-white">
               Comments
             </h2>
-            {post.comments?.length > 0 ? (
-              [...post.comments]
-                .reverse()
-                .map((comment: any, index: number) => (
-                  <div key={index} className="mb-4 p-4 border rounded">
-                    <p className="text-sm text-gray-600 dark:text-[#ffffffcf]">
-                      {comment.name} —{" "}
-                      {new Date(comment.postedAt).toLocaleString()}
-                    </p>
-                    <p className="mt-1 dark:text-[#ffffffcf]">
-                      {comment.comment}
-                    </p>
-                  </div>
-                ))
+
+            {Array.isArray(post.comments) && post.comments.length > 0 ? (
+              [...post.comments].reverse().map((comment, index) => (
+                <div key={index} className="mb-4 p-4 border rounded">
+                  <p className="text-sm text-gray-600 dark:text-[#ffffffcf]">
+                    {comment.name} —{" "}
+                    {new Date(comment.postedAt).toLocaleString()}
+                  </p>
+                  <p className="mt-1 dark:text-[#ffffffcf]">
+                    {comment.comment}
+                  </p>
+                </div>
+              ))
             ) : (
               <p className="text-gray-500 dark:text-[#ffffffcf]">
                 No comments yet.

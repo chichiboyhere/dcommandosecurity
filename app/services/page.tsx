@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { services } from "@/data/servicesData";
 
 export const metadata: Metadata = {
-  title: "Dcommando Security - Services",
+  title: "Damion Security - Services",
   description: "We are the leading company for security services.",
   keywords: [
     "crowd control services",
@@ -28,11 +28,11 @@ export default function ServicesSection() {
     description: service.desc,
     provider: {
       "@type": "Organization",
-      name: "Dcommando Security",
-      url: "https://dcommandosecurity.com",
+      name: "Damion Security",
+      url: "https://damionsecurity.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://dcommandosecurity.com/logo.png",
+        url: "https://damionsecurity.com/logo.png",
       },
     },
     areaServed: {
@@ -40,7 +40,7 @@ export default function ServicesSection() {
       name: "Nigeria",
     },
     serviceType: service.icon, // You can modify this to be more descriptive
-    url: `https://dcommandosecurity.com/services#${service.id}`,
+    url: `https://damionsecurity.com/services#${service.id}`,
   }));
 
   return (

@@ -1,4 +1,3 @@
-// Import React & Lucide icons
 import {
   ShieldCheck,
   Users,
@@ -9,6 +8,7 @@ import {
   CircleUserRound,
   DoorOpen,
 } from "lucide-react";
+import Link from "next/link";
 
 // Icon lookup object
 const iconMap = {
@@ -22,7 +22,8 @@ const iconMap = {
   vendorSourcing: Handshake,
 };
 
-import Link from "next/link";
+// Define a type for the keys of iconMap
+type IconKeys = keyof typeof iconMap;
 
 // Service data
 import { services } from "@/data/servicesData";
@@ -30,9 +31,9 @@ import { services } from "@/data/servicesData";
 // Main JSX
 export default function ServicesSection() {
   return (
-    <section className=" py-12 px-4 " data-aos="fade-up">
+    <section className="py-12 px-4" data-aos="fade-up">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white ">
+        <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
           HOW WE HELP YOU ACHIEVE SAFETY
         </h2>
         <h5 className="text-lg font-medium text-center text-gray-800 mb-8">
@@ -40,7 +41,7 @@ export default function ServicesSection() {
         </h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map(({ title, icon, desc, bg }, index) => {
-            const Icon = iconMap[icon];
+            const Icon = iconMap[icon as IconKeys]; // Cast icon to IconKeys
             return (
               <div
                 key={index}
@@ -60,7 +61,7 @@ export default function ServicesSection() {
                 <p className="text-gray-800 pl-14 dark:text-[#ffffffcf] ">
                   <Link href="/services">
                     {desc.slice(0, 200)}
-                    <span className=" cursor-pointer  text-blue-600 italic">
+                    <span className="cursor-pointer text-blue-600 italic">
                       ...more
                     </span>
                   </Link>

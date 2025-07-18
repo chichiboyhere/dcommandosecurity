@@ -2,7 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
-async function fetchBlogs() {
+interface Comment {
+  name: string;
+  email: string;
+  comment: string;
+  postedAt: Date;
+}
+
+interface BlogPost {
+  _id: string; // Add this line to include the ID
+  title: string;
+  content: string;
+  images: string[];
+  createdAt: Date;
+  updatedAt: Date;
+  comments: Comment[];
+}
+
+async function fetchBlogs(): Promise<BlogPost[]> {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/blog`, {
     cache: "no-store",
   });

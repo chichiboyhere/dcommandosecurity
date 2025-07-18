@@ -22,6 +22,7 @@ const iconMap = {
   securityGuard: ShieldAlert,
   vendorSourcing: Handshake,
 };
+type IconKeys = keyof typeof iconMap;
 import Image from "next/image";
 
 import { Modal } from "@/components/ui/ModalWithRef";
@@ -60,7 +61,7 @@ const Services = () => {
         </h5>
         <div className="grid grid-cols-1  gap-8">
           {services.map(({ id, title, icon, image, desc, bg }) => {
-            const Icon = iconMap[icon];
+            const Icon = iconMap[icon as IconKeys];
 
             return (
               <section

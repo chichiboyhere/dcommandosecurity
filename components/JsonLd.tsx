@@ -1,5 +1,5 @@
 // components/JsonLd.tsx
-export default function JsonLd({ data }: { data: Record<string, any> }) {
+export default function JsonLd({ data }: { data: Record<string, unknown> }) {
   //SEO PURPOSE
   return (
     <script

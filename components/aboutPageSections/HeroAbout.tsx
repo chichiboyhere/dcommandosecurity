@@ -19,15 +19,7 @@ const HeroSection = () => {
           fill
           className="object-cover md:object-top brightness-50 scale-x-[-1] "
         />
-        {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-          <h2
-            className="text-5xl md:text-5xl font-bold text-white"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            About Us
-          </h2>md:grid-cols-2 className="absolute top-[45vh] right-[300px]"
-        </div> */}
+
         <div className="flex flex-col  p-4 z-20 items-center justify-center relative ">
           <div className="absolute top-[30vh]">
             <h2

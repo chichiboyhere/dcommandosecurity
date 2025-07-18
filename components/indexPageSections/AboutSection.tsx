@@ -67,9 +67,13 @@ const AboutSection = () => {
             event center, club, and more so you can focus on what you have to
             do. We deploy gallant and well-trained security personnel who know
             their onions in the world of safe-guarding people and properties. No
-            matter the occasion or location, we are one call away from coming
-            around to ensure all goes as planed.
-            <Link href="/about"> Learn more</Link>
+            matter the occasion or location, we are one call away from
+            you.&nbsp;
+            <Link href="/about">
+              <span className="decoration-underline border-b-2 border-blue-900 dark:border-white">
+                Learn more
+              </span>
+            </Link>
           </p>
         </div>
       </div>

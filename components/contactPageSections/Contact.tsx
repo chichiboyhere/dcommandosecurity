@@ -19,7 +19,7 @@ type FormDataType = {
 
 export default function ContactPage() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null); // Specify the type here
 
   const [feedbackMsg, setFeedbackMsg] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -42,9 +42,13 @@ export default function ContactPage() {
     "security guard",
     "vendor sourcing",
   ];
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -62,12 +66,14 @@ export default function ContactPage() {
     formData.message &&
     formData.services.length > 0;
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleServiceToggle = (service) => {
+  const handleServiceToggle = (service: string) => {
     setFormData((prev) => ({
       ...prev,
       services: prev.services.includes(service)
@@ -120,7 +126,7 @@ export default function ContactPage() {
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
