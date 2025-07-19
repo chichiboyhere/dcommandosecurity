@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import RelatedPosts from "@/components/RelatedPosts";
 import JsonLd from "@/components/JsonLd";
+
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
@@ -35,7 +36,8 @@ interface Params {
 }
 
 export default async function BlogDetailPage({ params }: { params: Params }) {
-  const id = params?.id;
+  // Await params before using its properties
+  const { id } = await params;
 
   if (!id) {
     return <div className="p-8 text-red-600">Invalid blog ID.</div>;
@@ -70,7 +72,7 @@ export default async function BlogDetailPage({ params }: { params: Params }) {
     dateModified: post.updatedAt,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://dcommandosecurity.com/blog/${params.id}`,
+      "@id": `https://dcommandosecurity.com/blog/${id}`,
     },
   };
 
@@ -85,20 +87,16 @@ export default async function BlogDetailPage({ params }: { params: Params }) {
 
           {post.images && post.images.length > 0 && (
             <div className="mt-6 grid grid-cols-1 gap-4">
-              {post.images.map(
-                (
-                  id: string // Change to string if images are stored as strings
-                ) => (
-                  <Image
-                    key={id}
-                    src={`/api/images/${id}`}
-                    alt="Blog Image"
-                    className="w-full h-auto rounded shadow"
-                    width={500}
-                    height={300}
-                  />
-                )
-              )}
+              {post.images.map((id: string) => (
+                <Image
+                  key={id}
+                  src={`/api/images/${id}`}
+                  alt="Blog Image"
+                  className="w-full h-auto rounded shadow"
+                  width={500}
+                  height={300}
+                />
+              ))}
             </div>
           )}
 

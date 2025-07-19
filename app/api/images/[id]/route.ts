@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import mongoose from "mongoose";
 import { connectDB } from "@/lib/mongodb";
+//import { Readable } from "stream";
 
 export async function GET(
   req: NextRequest,
@@ -10,6 +11,12 @@ export async function GET(
     await connectDB();
 
     const db = mongoose.connection.db;
+    if (!db) {
+      return new Response("Database connection is not established", {
+        status: 500,
+      });
+    }
+
     const bucket = new mongoose.mongo.GridFSBucket(db, {
       bucketName: "uploads",
     });
@@ -26,16 +33,33 @@ export async function GET(
 
     const file = files[0];
 
-    const downloadStream = bucket.openDownloadStream(fileId);
+    const downloadStream = bucket.openDownloadStream(
+      fileId
+    ) as NodeJS.ReadableStream;
 
     const headers = new Headers();
     headers.set("Content-Type", file.contentType || "application/octet-stream");
     headers.set("Content-Disposition", `inline; filename="${file.filename}"`);
 
-    return new Response(downloadStream as any, {
+    // Convert Node.js ReadableStream to Web ReadableStream
+    const webReadableStream = new ReadableStream({
+      start(controller) {
+        downloadStream.on("data", (chunk) => {
+          controller.enqueue(chunk);
+        });
+        downloadStream.on("end", () => {
+          controller.close();
+        });
+        downloadStream.on("error", (err) => {
+          controller.error(err);
+        });
+      },
+    });
+
+    return new Response(webReadableStream, {
       headers,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error streaming image:", error);
     return new Response("Internal Server Error", { status: 500 });
   }

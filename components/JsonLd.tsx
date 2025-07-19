@@ -1,6 +1,8 @@
-// components/JsonLd.tsx
-export default function JsonLd({ data }: { data: Record<string, unknown> }) {
-  //SEO PURPOSE
+export default function JsonLd({
+  data,
+}: {
+  data: Record<string, unknown> | Record<string, unknown>[];
+}) {
   return (
     <script
       type="application/ld+json"
