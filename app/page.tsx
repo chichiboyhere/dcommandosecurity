@@ -6,8 +6,7 @@ import AOSInitializer from "@/components/AOSInitializer";
 import Testimonial from "@/components/indexPageSections/Testimonial";
 import ClientMarquee from "@/components/indexPageSections/ClientMarquee";
 import GallerySlideSection from "@/components/indexPageSections/GallerySection";
-
-import BlogSection from "@/components/indexPageSections/BlogSection";
+import BlogPage from "@/components/indexPageSections/BlogSection";
 
 export const metadata: Metadata = {
   title: "Dcommando Security - Home page",
@@ -39,10 +38,8 @@ export default function Home() {
           </h2>
           <ClientMarquee />
         </section>
-        {/* Blogs */}
+        <BlogPage />
         <AOSInitializer />
-
-        <BlogSection />
       </main>
     </div>
   );
