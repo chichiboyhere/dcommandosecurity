@@ -8,22 +8,23 @@ import { blogs } from "@/data/blogs";
 import RelatedPosts from "@/components/RelatedPosts";
 export const dynamic = "force-dynamic";
 
+export async function generateStaticParams() {
+  return blogs.map((blog) => ({
+    id: blog.id,
+  }));
+}
+
 export const metadata: Metadata = {
   title: "Dcommando Security - Blog story",
   description: "This is Dcommando security blog section.",
   keywords: ["security news", "security updates", "stories on security"],
 };
-
 export default async function BlogDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const id = (await params).id;
-
-  if (!id) {
-    return <div className="p-8 text-red-600">Invalid blog ID.</div>;
-  }
 
   const post = blogs.find((blog) => blog.id === id);
   if (!post) {
@@ -51,8 +52,8 @@ export default async function BlogDetailPage({
         url: "https://dcommandosecurity.com/logo.png",
       },
     },
-    datePublished: new Date().toISOString(), // Update with actual date if available
-    dateModified: new Date().toISOString(), // Update with actual date if available
+    datePublished: new Date().toISOString(),
+    dateModified: new Date().toISOString(),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://dcommandosecurity.com/blog/${id}`,
