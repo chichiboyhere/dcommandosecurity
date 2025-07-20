@@ -36,10 +36,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white text-blue-900 z-55 shadow dark:bg-[#191919]  dark:text-[#ffffffcf]">
-      <div className="flex justify-between items-center md:p-4  p-2">
+      <div className="flex justify-between items-center py-4 md:px-12  px-5">
         <Link
           href="/"
-          className="bg-transparent dark:bg-gray-300 py-2 px-5 rounded-4xl"
+          className="bg-transparent dark:bg-gray-300 dark:py-3 dark:px-5 dark:rounded-4xl"
         >
           <Image
             src="/images/brand/dcommando4.png"

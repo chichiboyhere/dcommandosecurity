@@ -50,7 +50,6 @@ const Services = () => {
     setIsModalOpen(false);
   };
   return (
-    //className=" py-12 px-4 "
     <section className="p-8 space-y-12 " data-aos="fade-up ">
       <div className="max-w-6xl ">
         <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
@@ -66,7 +65,7 @@ const Services = () => {
             return (
               <section
                 key={id}
-                className="grid md:grid-cols-2 gap-10 hover:scale-[1.01] transition-transform duration-300"
+                className="grid md:grid-cols-2 gap-10 hover:scale-[1.01] transition-transform duration-300 text-2xl"
                 id={id}
               >
                 <div

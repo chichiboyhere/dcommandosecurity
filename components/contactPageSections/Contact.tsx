@@ -83,7 +83,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-6 py-10  dark:bg-gray-800">
+    <div className="container px-6 md:px-8 space-y-12 mx-auto  py-10 text-lg dark:bg-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column */}
         <div className="space-y-10 px-8">
@@ -91,24 +91,24 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
               Contact Us
             </h2>
-            <div className="space-y-7 text-gray-600">
-              <div className="flex items-center gap-4 dark:text-white">
-                <MapPin className="w-5 h-5 " />
+            <div className=" text-gray-600 space-y-10 dark:text-white">
+              <div className="flex items-center gap-4 ">
+                <MapPin className="w-12 h-12 " />
                 <span className="font-500">
                   14 Faosat Somade Street, Bako Estate, Irawo, Mile 12, Lagos
                   State, Nigeria.
                 </span>
               </div>
-              <div className="flex items-center gap-4 dark:text-white">
-                <Mail className="w-5 h-5" />
+              <div className="flex items-center gap-4 ">
+                <Mail className="w-8 h-8" />
                 <span className="font-500">info@dcommandosecurity.com</span>
               </div>
-              <div className="flex items-center gap-4 dark:text-white">
-                <Phone className="w-5 h-5 " />
+              <div className="flex items-center gap-4 ">
+                <Phone className="w-6 h-6 " />
                 <span className="font-500">+234 703 822 3500</span>
               </div>
               <div className="flex gap-4 items-center">
-                <FaFacebookF className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-full" />
+                <FaFacebookF className="w-9 h-9 bg-black dark:bg-gray-800 text-white px-2 rounded-full" />
                 <FaInstagram className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
                 <FaXTwitter className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
                 <FaWhatsapp className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
-              <div className="absolute bottom-2 left-2 bg-white p-2 text-sm shadow">
+              <div className="absolute bottom-2 left-2 bg-white p-2 text-lg shadow">
                 <p>
                   14 Faosat Somade Street, Bako Estate, Irawo, Mile 12, Lagos
                   State, Nigeria.
@@ -191,7 +191,7 @@ export default function ContactPage() {
               <input
                 name="name"
                 type="text"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
+                className="md:w-[35vw] w-full border-2 p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -207,7 +207,7 @@ export default function ContactPage() {
               <input
                 name="email"
                 type="email"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
+                className="md:w-[35vw] w-full border-2 p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -222,7 +222,7 @@ export default function ContactPage() {
               <input
                 name="phone"
                 type="text"
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
+                className="md:w-[35vw] w-full border-2 p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -289,7 +289,7 @@ export default function ContactPage() {
               <textarea
                 name="message"
                 rows={4}
-                className="md:w-[35vw] w-full border p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
+                className="md:w-[35vw] w-full border-2 p-3 rounded-xl text-gray-400 dark:text-white border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
@@ -309,7 +309,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={!isFormComplete}
-              className={`md:w-[35vw] w-full p-5 rounded-2xl bg-gray-600 text-white transition hover:bg-gray-400
+              className={`md:w-[35vw] w-full p-5 rounded-2xl bg-blue-800 text-white transition hover:bg-blue-400
                 ${isFormComplete ? "cursor-pointer" : "cursor-not-allowed "}`}
             >
               Submit

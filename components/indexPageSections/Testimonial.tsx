@@ -46,9 +46,9 @@ export default function Testimonial() {
               <h4 className="text-xl font-bold my-4 text-blue-900 dark:text-white">
                 &quot;{testimonial.title}&quot;
               </h4>
-              <h3 className="text-base italic text-blue-900 mb-4 dark:text-white">
+              <p className="text-lg md:text-base  italic text-blue-900 mb-4 dark:text-white">
                 &quot;{testimonial.desc}&quot;
-              </h3>
+              </p>
 
               <div className="flex flex-row  justify-start gap-3">
                 <div className="h-10 w-10  rounded-full relative overflow-hidden">

@@ -24,7 +24,7 @@ const HistoryAndAchievements = () => {
           data-aos="fade-up"
         >
           <Image
-            src={"/images/t1.jpg"}
+            src={"/images/gallery/gallery7.jpg"}
             alt="About us"
             fill
             className="object-cover object-center"
@@ -47,7 +47,7 @@ const HistoryAndAchievements = () => {
 
         <div className="bg-white rounded-xl p-4 shadow border border-blue-100 overflow-hidden relative aspect-[4/3] w-full sm:w-160 md:w-120">
           <Image
-            src={"/images/t2.jpg"}
+            src={"/images/gallery/gallery2.jpg"}
             alt="About us"
             fill
             className="object-cover object-center"

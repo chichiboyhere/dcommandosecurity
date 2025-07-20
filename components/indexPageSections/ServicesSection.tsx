@@ -58,7 +58,7 @@ export default function ServicesSection() {
                   </h3>
                 </div>
                 {/* Display the first 100 characters of the description */}
-                <p className="text-gray-800 pl-14 dark:text-[#ffffffcf] ">
+                <p className="text-gray-800 pl-14 dark:text-[#ffffffcf]  text-lg">
                   <Link href="/services">
                     {desc.slice(0, 200)}
                     <span className="cursor-pointer text-blue-600 italic">
