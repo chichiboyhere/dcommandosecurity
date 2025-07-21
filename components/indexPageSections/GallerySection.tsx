@@ -47,7 +47,7 @@ const GallerySlideSection = () => {
       </h1>
       {/* Slider wrapper */}
       <Link href="/gallery">
-        <div className="relative flex gap-4 overflow-hidden w-full justify-center content-center ">
+        <div className="flex gap-4 overflow-hidden w-full justify-center content-center ">
           {/* Slide track */}
 
           <div
@@ -75,25 +75,9 @@ const GallerySlideSection = () => {
               </div>
             ))}
           </div>
-
-          {/* Chevrons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200 "
-          >
-            <ChevronLeft className="w-5 h-5 " />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200"
-          >
-            <ChevronRight className="w-5 h-5 " />
-          </button>
         </div>
       </Link>
-      {/* Indicators */}
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="relative flex justify-center mt-4 gap-2">
         {Array.from({ length: totalSlides }).map((_, idx) => (
           <div
             key={idx}
@@ -103,7 +87,19 @@ const GallerySlideSection = () => {
             }`}
           ></div>
         ))}
-      </div>
+      </div>{" "}
+      <button
+        onClick={prevSlide}
+        className="absolute md:left-100 left-10 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200 "
+      >
+        <ChevronLeft className="w-5 h-5 " />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute md:right-100 right-10 z-1000 transform -translate-y-1/2 z-10 bg-gray-400 p-2 rounded-full shadow hover:bg-gray-200"
+      >
+        <ChevronRight className="w-5 h-5 " />
+      </button>
     </div>
   );
 };

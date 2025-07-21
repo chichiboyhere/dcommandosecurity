@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <div className="text-white dark:bg-gray-800">
+    <div className="text-white dark:bg-gray-800 bg-white">
       {/* Main */}
       <main className="pt-16">
         <HeroSection />

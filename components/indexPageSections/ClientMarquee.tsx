@@ -13,15 +13,15 @@ const clients = [
 
 export default function ClientMarquee() {
   return (
-    <>
+    <div className="bg-white dark:bg-gray-800">
       <h2 className="text-3xl font-bold text-center text-blue-900 mb-5 dark:text-white">
         Here are just a few of the brands we have worked with
       </h2>
 
       <div className="relative overflow-hidden w-full h-[150px]  bg-white dark:bg-gray-800">
         {/* Fading edges */}
-        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="absolute left-0 top-0 h-full w-8 md:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 h-full w-8 md:w-24 bg-gradient-to-l from-white to-transparent z-10" />
 
         <div className="w-full h-full flex items-center">
           <div className="flex animate-marquee whitespace-nowrap gap-12">
@@ -38,6 +38,6 @@ export default function ClientMarquee() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

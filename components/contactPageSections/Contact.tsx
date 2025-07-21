@@ -86,7 +86,7 @@ export default function ContactPage() {
     <div className="container px-6 md:px-8 space-y-12 mx-auto  py-10 text-lg dark:bg-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column */}
-        <div className="space-y-10 px-8">
+        <div className="space-y-10 px-3 md:px-8">
           <div>
             <h2 className="text-2xl font-bold mb-4 text-blue-900 dark:text-white">
               Contact Us
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 <span className="font-500">+234 703 822 3500</span>
               </div>
               <div className="flex gap-4 items-center">
-                <FaFacebookF className="w-9 h-9 bg-black dark:bg-gray-800 text-white px-2 rounded-full" />
+                <FaFacebookF className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-full" />
                 <FaInstagram className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
                 <FaXTwitter className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />
                 <FaWhatsapp className="w-8 h-8 bg-black dark:bg-gray-800 text-white px-2 rounded-xl" />

@@ -31,7 +31,10 @@ import { services } from "@/data/servicesData";
 // Main JSX
 export default function ServicesSection() {
   return (
-    <section className="py-12 px-4" data-aos="fade-up">
+    <section
+      className="py-12 px-4 bg-blue-50 dark:bg-gray-800"
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-blue-900 dark:text-white">
           HOW WE HELP YOU ACHIEVE SAFETY
