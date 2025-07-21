@@ -83,7 +83,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container px-6 md:px-8 space-y-12 mx-auto bg:white py-10 text-lg dark:bg-gray-800">
+    <div className="container px-6 md:px-8 space-y-12 mx-auto bg-white py-10 text-lg dark:bg-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Column */}
         <div className="space-y-10 px-3 md:px-8">
