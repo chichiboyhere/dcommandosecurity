@@ -8,9 +8,9 @@ import ThemeProvider from "@/theme/theme-provider";
 
 import BackToTop from "@/components/BackToTop";
 
-// import { Inter } from "next/font/google";
+//import { Inter } from "next/font/google";
 
-// const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

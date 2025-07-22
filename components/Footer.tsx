@@ -24,7 +24,7 @@ const Footer = () => {
             </li>
             <li>14 Faosat Somade Street, Bako Estate,</li>
             <li>Irawo, Mile 12, Lagos State, Nigeria.</li>
-            <li>Phone: +234 801 234 5678</li>
+            <li>Phone: +234 703 822 3500</li>
           </ul>
         </div>
 

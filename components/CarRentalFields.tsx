@@ -21,7 +21,7 @@ const CarRentalFields = () => {
         <label className="block text-sm font-medium text-gray-700">
           Service Type
         </label>
-        <div className="flex flex-col md:flex-row gap-4 mt-1">
+        <div className="flex flex-col md:flex-row gap-4 mt-1 text-black z-60 font-semibold">
           {["Car Rental", "Airport Pick-Up", "Both"].map((type) => (
             <label key={type} className="flex items-center gap-1">
               <input
@@ -29,7 +29,7 @@ const CarRentalFields = () => {
                 name="serviceType"
                 value={type}
                 required
-                className="accent-blue-700"
+                className="accent-blue-700 font-semibold "
               />
               {type}
             </label>
