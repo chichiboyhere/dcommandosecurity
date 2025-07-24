@@ -35,11 +35,11 @@ const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
-  // useEffect(() => {
-  //   if (isModalOpen && modalRef.current) {
-  //     modalRef.current.focus(); // Focus on the modal when it opens
-  //   }
-  // }, [isModalOpen]);
+  useEffect(() => {
+    if (isModalOpen && modalRef.current) {
+      modalRef.current.focus(); // Focus on the modal when it opens
+    }
+  }, [isModalOpen]);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const openForm = (id: string, serviceName: string) => {
@@ -234,7 +234,7 @@ const Services = () => {
                   rows={3}
                 />
               </div>
-              <div className="flex flex-row justify-between items-center ">
+              <div className="flex flex-row  justify-between items-center md:px-30 ">
                 <button
                   type="submit"
                   className="bg-blue-900 text-white px-4 py-2 mb-2 rounded hover:bg-blue-800"
