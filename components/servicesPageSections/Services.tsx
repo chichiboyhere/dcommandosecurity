@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   ShieldCheck,
   Users,
@@ -35,19 +35,27 @@ const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
+  useEffect(() => {
+    if (isModalOpen && modalRef.current) {
+      modalRef.current.focus(); // Focus on the modal when it opens
+    }
+  }, [isModalOpen]);
+
   const modalRef = useRef<HTMLDivElement>(null);
   const openForm = (id: string, serviceName: string) => {
     setSelectedService(serviceName);
     setIsModalOpen(true);
     setSelectedServiceId(id);
     console.log(id);
+    document.body.style.overflow = "hidden";
     // Scroll to the modal
-    modalRef.current?.scrollIntoView({ behavior: "smooth" });
+    //modalRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const closeForm = () => {
     setSelectedService("");
     setIsModalOpen(false);
+    document.body.style.overflow = "auto";
   };
   return (
     <section className="p-8 space-y-12 " data-aos="fade-up ">
@@ -127,7 +135,7 @@ const Services = () => {
                   )}
                   <button
                     onClick={() => openForm(id, title)} // Sets selected service and opens modal
-                    className="items-center justify-center mt-2 text-sm text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800  transition dark:bg-blue-400 "
+                    className="items-center justify-center mt-2 text-base text-white bg-blue-900 px-4 py-2 rounded hover:bg-blue-800  transition dark:bg-blue-400 "
                   >
                     Book Now
                   </button>
@@ -139,17 +147,9 @@ const Services = () => {
         </div>
       </div>
       {isModalOpen && (
-        //max-h-[90vh] overflow-y-auto  w-full max-w-lg  p-6 rounded-xl shadow-lg relative"
-        // <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center px-4">
         <Modal onClose={closeForm} ref={modalRef}>
           <div className="max-w-lg max-h-[90vh] p-6 rounded-xl shadow-lg  overflow-y-auto ">
-            {/* <button
-              onClick={closeForm}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
-            >
-              <X size={24} />
-            </button> */}
-            <h2 className="text-xl font-bold mb-4 text-blue-900">
+            <h2 className="text-xl font-bold my-5 text-blue-900">
               Book {selectedService}
             </h2>
             <form
@@ -244,7 +244,6 @@ const Services = () => {
             </form>
           </div>
         </Modal>
-        // </div>
       )}
     </section>
   );
