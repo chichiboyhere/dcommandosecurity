@@ -35,11 +35,11 @@ const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState("");
 
-  useEffect(() => {
-    if (isModalOpen && modalRef.current) {
-      modalRef.current.focus(); // Focus on the modal when it opens
-    }
-  }, [isModalOpen]);
+  // useEffect(() => {
+  //   if (isModalOpen && modalRef.current) {
+  //     modalRef.current.focus(); // Focus on the modal when it opens
+  //   }
+  // }, [isModalOpen]);
 
   const modalRef = useRef<HTMLDivElement>(null);
   const openForm = (id: string, serviceName: string) => {
@@ -148,14 +148,14 @@ const Services = () => {
       </div>
       {isModalOpen && (
         <Modal onClose={closeForm} ref={modalRef}>
-          <div className="max-w-lg max-h-[90vh] p-6 rounded-xl shadow-lg  overflow-y-auto ">
+          <div className="max-w-lg  p-6 rounded-xl shadow-lg  overflow-y-auto ">
             <h2 className="text-xl font-bold my-5 text-blue-900">
               Book {selectedService}
             </h2>
             <form
               action="https://formspree.io/f/xyzjvjgy"
               method="POST"
-              className="space-y-4 mb-2"
+              className="space-y-4 my-4"
             >
               <input type="hidden" name="service" value={selectedService} />
 
@@ -166,7 +166,7 @@ const Services = () => {
                 <input
                   name="name"
                   required
-                  className="w-full border px-3 py-2 rounded"
+                  className="w-full border px-3 py-2 rounded text-blue-900"
                 />
               </div>
 
@@ -178,7 +178,7 @@ const Services = () => {
                   name="email"
                   type="email"
                   required
-                  className="w-full border px-3 py-2 rounded"
+                  className="w-full border px-3 py-2 rounded text-blue-900"
                 />
               </div>
 
@@ -189,7 +189,7 @@ const Services = () => {
                 <input
                   name="phone"
                   required
-                  className="w-full border px-3 py-2 rounded"
+                  className="w-full border px-3 py-2 rounded text-blue-900"
                 />
               </div>
               {selectedServiceId === "carRentalAndAirportPickUp" ? (
@@ -205,7 +205,7 @@ const Services = () => {
                       type="number"
                       min="1"
                       required
-                      className="w-full border px-3 py-2 rounded"
+                      className="w-full border px-3 py-2 rounded text-blue-900"
                     />
                   </div>
 
@@ -217,7 +217,7 @@ const Services = () => {
                       name="date"
                       type="date"
                       required
-                      className="w-full border px-3 py-2 rounded"
+                      className="w-full border px-3 py-2 rounded text-blue-900"
                       min={new Date().toISOString().split("T")[0]}
                     />
                   </div>
@@ -230,17 +230,24 @@ const Services = () => {
                 </label>
                 <textarea
                   name="message"
-                  className="w-full border px-3 py-2 rounded"
+                  className="w-full border px-3 py-2 rounded text-blue-900"
                   rows={3}
                 />
               </div>
-
-              <button
-                type="submit"
-                className="bg-blue-900 text-white px-4 py-2 mb-2 rounded hover:bg-blue-800"
-              >
-                Submit Booking
-              </button>
+              <div className="flex flex-row justify-between items-center ">
+                <button
+                  type="submit"
+                  className="bg-blue-900 text-white px-4 py-2 mb-2 rounded hover:bg-blue-800"
+                >
+                  Submit
+                </button>
+                <button
+                  onClick={closeForm}
+                  className="bg-red-900 text-white px-4 py-2 mb-2 rounded hover:bg-red-600"
+                >
+                  Close
+                </button>
+              </div>
             </form>
           </div>
         </Modal>

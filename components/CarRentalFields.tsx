@@ -67,7 +67,7 @@ const CarRentalFields = () => {
             name="startDate"
             type="date"
             required
-            className="w-full border px-3 py-2 rounded"
+            className="w-full border px-3 py-2 rounded text-blue-900"
             min={new Date().toISOString().split("T")[0]}
           />
         </div>
@@ -79,7 +79,7 @@ const CarRentalFields = () => {
             name="endDate"
             type="date"
             required
-            className="w-full border px-3 py-2 rounded"
+            className="w-full border px-3 py-2 rounded text-blue-900"
             min={new Date().toISOString().split("T")[0]}
           />
         </div>
