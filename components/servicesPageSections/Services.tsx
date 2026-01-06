@@ -155,7 +155,7 @@ const Services = () => {
             <form
               action="https://formspree.io/f/xyzjvjgy"
               method="POST"
-              className="space-y-4 my-4"
+              className="space-y-4 mb-4 pt-8"
             >
               <input type="hidden" name="service" value={selectedService} />
 
